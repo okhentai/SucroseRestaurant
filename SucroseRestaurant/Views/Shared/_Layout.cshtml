@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="icon" type="image/png" href="~/img/icon.png">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/css/adminlte.min.css">
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="~/css/thietke.css">
+</head>
+<body >
+    <!--Header-->
+
+    <!--Body-->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--Footer-->
+    <footer class="mt-5 p-3" style="background: rgb(27 25 60 / 58%);color: #fff; margin-right: -6px; margin-left: -8px">
+        <div class="container-lg" bis_skin_checked="1">
+            <h2 class="guide__title mt-3">
+                <a href="#">
+                    <img src="#" style="margin-top: -8px;height: 45px">
+                </a>
+            </h2>
+            <div class="row" bis_skin_checked="1">
+                <section class="col-12 col-lg-4">
+                    <div class="h h4 link-active" bis_skin_checked="1">
+                        <a href="#" style="color: inherit;text-shadow:unset">Nhà hàng Sucrose</a>
+                    </div>
+                    <p>
+                        <span style="color: rgb(255, 255, 255); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">
+                            <p class="m-0">Đây là bài báo cáo cuối kỳ web 2 của nhóm Sucrose</p>
+                            <p class="m-0">Không có tính thương mại</p>
+                            <p class="m-0">Dùng cho mục đích học tập ^^!</p>
+                        </span>
+                        <br>
+                    </p>
+                    <p class="mt-3 small">©DH20LT - Bản quyền thuộc về Sucrose Team</p>
+                    <div class="h h5" bis_skin_checked="1">
+                        <i class="fa fa-language"></i> Ngôn ngữ
+                    </div>
+                    <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">English</a>
+                    <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">Mặc định</a>
+                </section>
+                <section class="col-12 col-lg-4">
+                    <div class="h h4 link-active" bis_skin_checked="1">Thành viên của nhóm</div>
+                    <p class="m-0">Trương An Khang</p>
+                    <p class="m-0">Bùi Ngọc Tâm</p>
+                </section>
+                <section class="col-12 col-lg-4">
+                    <i class="fab fa-facebook-square fa-2x mr-2"></i>
+                    <i class="fab fa-youtube fa-2x"></i>
+                    <p class="mt-3 fw-bold"><i class="fa fa-phone mr-2"></i>Phone: 0123456789 (8h-22h)</p>
+                    <p class="fw-bold"><i class="fa fa-clock mr-2"></i>Thời gian làm việc: 8h - 24h</p>
+                    <p class="fw-bold"><i class="fa fa-map-marked-alt mr-2"></i>Địa chỉ: 02 Trương Văn Bang, Tp Vũng Tàu - tỉnh Bà Rịa Vũng Tàu</p><p class="m-0"></p>
+                </section>
+            </div>
+        </div>
+    </footer>
+  
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
