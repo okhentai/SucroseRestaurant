@@ -1,7 +1,7 @@
     body{
         background: #fff url('../img/bgres.jpg') no-repeat fixed;
         background-size: cover;
-    }
+    }    
     .btn-pretty {
         border: none;
         background: url('style/genshi/img/btn_pretty.webp') no-repeat top left;
@@ -738,6 +738,7 @@
     .cart {
         width: 50%;
         margin: 3em auto 2em;
+        background-color: #967852;
     }
 
     .cart-experience {
@@ -752,7 +753,7 @@
 
     .cart-experience h4 {
         font-size: 1.2em;
-        color: #fff;
+        color: #000000;
         margin-top: 3px;
     }
     td.quantity {
