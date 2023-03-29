@@ -576,6 +576,11 @@
         border:3px solid #a58e5e;
         background-color: rgb(17 17 17 / 62%) !important;
     border-radius:unset;
+
+    background-color: #37336f61;
+            padding: 20px;
+            border-radius: 13px;
+            color: #fff;
     }
     .poster__sign{
     top: 47vh !important;
@@ -732,13 +737,13 @@
 
     .logo h3 {
         font-size: 2.5em;
-        color: #f3db0e;
+        color: #fff;
     }
 
     .cart {
         width: 50%;
         margin: 3em auto 2em;
-        background-color: #967852;
+        background-color: #fff;
     }
 
     .cart-experience {
@@ -753,7 +758,7 @@
 
     .cart-experience h4 {
         font-size: 1.2em;
-        color: #000000;
+        color: #fff;
         margin-top: 3px;
     }
     td.quantity {
@@ -775,6 +780,91 @@
         cursor:pointer;
     }
 
+    /* Details */
+.poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 62%);
+}
+
+.poster__sign {
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 44vh;
+    left: 50%;
+    width: 100%;
+    /*min-height: 280px;*/
+    transform: translate(-50%, -299px);
+}
+.poster__arrows {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 28px;
+}
+
+.poster__arrow {
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAQCAMAAAA/D5+aAAAAVFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////8wXzyWAAAAG3RSTlMA+fXx7edfV09IQTQvIRvg29aUjHhxaDw6KBbByZ+xAAAAiElEQVQY03WQ6w6AIAhGPzO7mN3v8f7vGZZbFuv80MFhMAAwOQjcBGaktPqaKqURGIhIr2+zak4OyBR/iY2NTTilMiC/XPmY8jI5mMI7VYCJQlEmmlgdmuMeraPRm3e0AAt5s30WYeaZH7GmMxQw4ji7CWaHoG69aWtA0nREXTDC9X2DH44DESf7dwtW+kB5cQAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-color: transparent;
+    background-size: auto;
+    -webkit-animation-name: arrow;
+    animation-name: arrow;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.poster__arrow-1 {
+    top: 0;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.poster__arrow-2 {
+    top: 12px;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.poster__arrow-3 {
+    top: 24px;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.poster__arrow-1 {
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
+
+.poster__arrow-2 {
+    -webkit-animation: glowing 1300ms infinite;
+    -moz-animation: glowing 1300ms infinite;
+    -o-animation: glowing 1300ms infinite;
+    animation: glowing 1300ms infinite;
+}
+
+.poster__arrow-3 {
+    -webkit-animation: glowing 1000ms infinite;
+    -moz-animation: glowing 1000ms infinite;
+    -o-animation: glowing 1000ms infinite;
+    animation: glowing 1000ms infinite;
+    border-radius: 24px;
+}
 
 
 
