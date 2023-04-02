@@ -8,6 +8,10 @@ namespace SucroseRestaurant.Controllers
         {
             return View();
         }
+        public IActionResult ListAdmin()
+        {
+            return View();
+        }
         public IActionResult Details()
         {
             return View();
