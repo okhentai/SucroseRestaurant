@@ -2,16 +2,6 @@
         background: #fff url('../img/bgres.jpg') no-repeat fixed;
         background-size: cover;
     }    
-    .btn-pretty {
-        border: none;
-        background: url('style/genshi/img/btn_pretty.webp') no-repeat top left;
-        color: #e4defe;
-        font-weight: bold;
-        font-size: 19px;
-        height: 52px;
-        width: 191px;
-        margin: 3px 0 3px 0;
-    }
     .note__title {
         width: 100%;
         line-height: 34px;

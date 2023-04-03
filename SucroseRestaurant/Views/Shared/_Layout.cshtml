@@ -53,22 +53,16 @@
                             </li>
                         </ul>
 
-                        <div class=" navbar-nav" style="position: absolute;right: 35px;" bis_skin_checked="1">
-                            <li class="nav-item">
-                                <a asp-controller="Account" asp-action="Register" class="nav-link" bis_skin_checked="1">
-                                    <button class="btn-pretty">
-                                        Register
-                                    </button>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a asp-controller="Account" asp-action="Login" class="nav-link" style="padding-left: unset" bis_skin_checked="1">
-                                    <button class="btn-pretty">
-                                        Login
-                                    </button>
-                                </a>
-                            </li>
-                        </div>
+                        <nav class=" navbar-nav" style="position: absolute;right: 35px;" bis_skin_checked="1">
+                            <form class="form-inline">
+                                <button asp-controller="Account" asp-action="Register" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
+                                    Register
+                                </button>
+                                <button asp-controller="Account" asp-action="Login" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
+                                    Login
+                                </button>
+                            </form>
+                        </nav>
                     </div>
 
                     <!-- Right navbar links -->
