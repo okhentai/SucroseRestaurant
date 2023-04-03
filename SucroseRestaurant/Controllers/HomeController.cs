@@ -9,6 +9,7 @@ namespace SucroseRestaurant.Controllers
 
         public HomeController()
         {
+
         }
 
         public IActionResult Index()
