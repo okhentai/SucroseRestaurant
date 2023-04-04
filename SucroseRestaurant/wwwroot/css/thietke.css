@@ -509,11 +509,11 @@
         width: 100%;
     margin-top: 0px;
     }
-    .h {
+    .h{
         text-transform: uppercase;
-        color: #fdb603;
+        color: #198754;
         padding-bottom: 10px;
-        border-bottom: solid 1px #fdb603;
+        border-bottom: solid 1px #198754;
     }
     footer{
     background:unset !important;

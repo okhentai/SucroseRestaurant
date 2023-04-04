@@ -10,7 +10,9 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="~/css/adminlte.min.css">
     <!-- Liên kết file CSS -->
-    <link rel="stylesheet" href="~/css/thietke.css">
+    <link rel="stylesheet" href="~/css/thietke.css" asp-append-version="true">
+    <!-- Liên kết với font awsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body class="sidebar-collapse layout-top-nav" bis_skin_checked="1" style="height: auto;">
     <div class="wrapper" bis-skin-checked="1">
@@ -37,13 +39,18 @@
                                     Menu
                                 </a>
                             </li>
-
                             
-
                             <!-- Cart -->
                             <li class="nav-item dropdown">
                                 <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header" bis_skin_checked="1">
                                     Cart
+                                </a>
+                            </li>
+
+                            <!-- About Us -->
+                            <li class="nav-item dropdown">
+                                <a asp-controller="AboutUs" asp-action="AboutUs" class="nav-link menu-header" bis_skin_checked="1">
+                                    About Us
                                 </a>
                             </li>
                         </ul>
@@ -84,10 +91,10 @@
                 <div class="row" bis_skin_checked="1">
                     <section class="col-12 col-lg-4">
                         <div class="h h4 link-active" bis_skin_checked="1">
-                            <a href="#" style="color: inherit;text-shadow:unset">Nhà hàng Sucrose</a>
+                            <a >Nhà hàng Sucrose</a>
                         </div>
                         <p>
-                            <span style="color: rgb(255, 255, 255); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">
+                            <span style="color: rgb(255, 255, 255); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;" class="success">
                                 <p class="m-0">Đây là bài báo cáo cuối kỳ web 2 của nhóm Sucrose</p>
                                 <p class="m-0">Không có tính thương mại</p>
                                 <p class="m-0">Dùng cho mục đích học tập ^^!</p>

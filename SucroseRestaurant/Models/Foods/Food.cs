@@ -16,9 +16,12 @@ namespace SucroseRestaurant.Models.Foods
         public float Price { get; set; }
 
         [Required(ErrorMessage = "Please insert the food Category")]
-        public string Category { get; set; }
+        public int Category { get; set; }
+
+        public int Stock { get; set; }
 
         public string PhotoPath { get; set; }
+        public int PhotoLink { get; set;}
 
     }
 }
