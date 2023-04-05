@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace SucroseRestaurant.Models.Foods
+namespace SucroseRestaurant.Models
 {
     public class AppDbContext : DbContext
     {

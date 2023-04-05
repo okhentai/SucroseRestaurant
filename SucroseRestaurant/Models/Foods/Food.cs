@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SucroseRestaurant.Models.Foods
 {
@@ -15,13 +16,12 @@ namespace SucroseRestaurant.Models.Foods
         [Required(ErrorMessage = "Please insert the food price")]
         public float Price { get; set; }
 
-        [Required(ErrorMessage = "Please insert the food Category")]
-        public int Category { get; set; }
+        [ForeignKey("Id")]
+        public Category category { get; set; }
 
         public int Stock { get; set; }
 
         public string PhotoPath { get; set; }
-        public int PhotoLink { get; set;}
 
     }
 }

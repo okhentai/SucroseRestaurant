@@ -1,7 +1,7 @@
-    body{
-        background: #fff url('../img/bgres.jpg') no-repeat fixed;
-        background-size: cover;
-    }    
+body {
+    background: #fff url('../img/bg.jpg') no-repeat fixed;
+    background-size: cover;
+}    
     .note__title {
         width: 100%;
         line-height: 34px;
