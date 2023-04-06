@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SucroseRestaurant.Controllers
+namespace Admin.Controllers
 {
     public class AccountController : Controller
     {

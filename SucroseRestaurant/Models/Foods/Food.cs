@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Admin.Models.Categories;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SucroseRestaurant.Models.Foods
+namespace Admin.Models.Foods
 {
     public class Food
     {
@@ -16,7 +17,8 @@ namespace SucroseRestaurant.Models.Foods
         [Required(ErrorMessage = "Please insert the food price")]
         public float Price { get; set; }
 
-        [ForeignKey("Id")]
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
         public Category category { get; set; }
 
         public int Stock { get; set; }

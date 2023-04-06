@@ -1,15 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using SucroseRestaurant.Models.Foods;
+using Admin.Models.Foods;
 
-namespace Admin.Models.Categorys
+namespace Admin.Models.Categories
 {
     public class Category
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Please insert category name")]
         public string Name { get; set; }
-        public string PhotoPath { get; set; }
+
         //RelationShip to Food 
-        public List<Food> Foods { get; set; }
+        public List<Food>? Foods { get; set; }
     }
 }
+    

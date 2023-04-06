@@ -1,4 +1,4 @@
-﻿namespace Admin.Models.Categorys
+﻿namespace Admin.Models.Categories
 {
     public interface ICategoryRepository
     {

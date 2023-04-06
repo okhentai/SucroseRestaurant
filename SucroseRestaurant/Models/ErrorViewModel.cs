@@ -1,4 +1,4 @@
-namespace SucroseRestaurant.Models
+namespace Admin.Models
 {
     public class ErrorViewModel
     {

@@ -1,4 +1,4 @@
-﻿namespace SucroseRestaurant.Models.Foods
+﻿namespace Admin.Models.Foods
 {
     public class FoodRepository : IFoodRepository
     {
