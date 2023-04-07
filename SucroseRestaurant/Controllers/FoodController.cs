@@ -4,23 +4,23 @@ namespace Admin.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult List()
+        public IActionResult ListFood()
         {
             return View();
         }
-        public IActionResult ListAdmin()
+        public IActionResult ListFoodAdmin()
         {
             return View();
         }
-        public IActionResult Details()
+        public IActionResult DetailsFood()
         {
             return View();
         }
-        public IActionResult Add()
+        public IActionResult AddFood()
         {
             return View();
         }
-        public IActionResult Update()
+        public IActionResult UpdateFood()
         {
             return View();
         }

@@ -1,32 +1,46 @@
-﻿namespace Admin.Models.Foods
+﻿using Admin.Models.Categories;
+
+namespace Admin.Models.Foods
 {
     public class FoodRepository : IFoodRepository
     {
-        public FoodRepository() { }
+        private readonly AppDbContext appDbContext;
+
+        public FoodRepository(AppDbContext appDbContext)
+        {
+            this.appDbContext = appDbContext;
+        }
 
         public Food AddFood(Food food)
         {
-            throw new NotImplementedException();
+            appDbContext.Foods.Add(food);
+            appDbContext.SaveChanges();
+            return food;
         }
 
         public Food DeleteFood(Food food)
         {
-            throw new NotImplementedException();
+            appDbContext?.Foods.Remove(food);
+            appDbContext?.SaveChanges();
+            return food;
         }
 
         public IEnumerable<Food> GetAll()
         {
-            throw new NotImplementedException();
+            appDbContext.SaveChanges();
+            return appDbContext.Foods;
         }
 
         public Food GetFood(int id)
         {
-            throw new NotImplementedException();
+            return appDbContext.Foods.Find(id);
         }
 
         public Food UpdateFood(Food food)
         {
-            throw new NotImplementedException();
+            appDbContext.Foods.Update(food);
+            appDbContext.SaveChanges();
+            return food;
         }
     }
 }
