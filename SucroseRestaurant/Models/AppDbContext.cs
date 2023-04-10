@@ -21,10 +21,6 @@ namespace Admin.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //use this to configure the model
-            modelBuilder.Entity<Category>()
-                .HasMany(c => c.Foods)
-                .WithOne(f => f.category)
-                .HasForeignKey(f => f.CategoryId);
 
         }
     }

@@ -1,20 +1,48 @@
-﻿
-<body>
-    <button type="button m-3" class="btn btn-primary">
-        <a asp-action="AddFood" class="text-decoration-none text-white">Create</a>
-    </button>
+﻿@model IEnumerable<Admin.Models.Foods.Food>
 
-    @foreach (var product in @Model)
-    {
-        <div class="card m-3" style="width: 18rem;">
-            <img class="card-img-top" src="~/images/@product.Photopath" alt="@product.Name">
-            <div class="card-body">
-                <h5 class="card-title">@product.Name</h5>
-                <p class="card-text">@product.Description</p>
-                <a asp-action="UpdateProduct" asp-route-id="@product.Id" class="btn btn-primary" id="tag-a-open-update">Update</a>
-                <a asp-action="DeleteProduct" asp-route-id="@product.Id" class="btn btn-primary" id="tag-a-delete">Delete</a>
-            </div>
-        </div>
-    }
+
+<body>
+    <div class="wrapper" bis_skin_checked="1">
+        <!--Main-->
+        <main>
+            <section class="content">
+                <div class="container-fluid" bis_skin_checked="1">
+                    <center><img src="~/img/city.png" class="city__icon"></center>
+                    <h1 class="guide__title" style="margin-bottom: 72px;">Add Category</h1>
+                    <div class="container" bis_skin_checked="1">
+
+                        <div class="row justify-content-center" bis_skin_checked="1">
+                            <div class="col-md-8" bis_skin_checked="1">
+                                <div class="card" style="box-shadow: unset" bis_skin_checked="1">
+                                    <div class="card-body" bis_skin_checked="1">
+                                        <br>
+                                        <button type="button m-3" class="btn btn-primary">
+                                            <a asp-action="AddFood" class="text-decoration-none text-white">Create</a>
+                                        </button>
+
+                                        <div class="row">
+                                            @foreach (var food in @Model)
+                                            {
+                                                <div class="col-sm">
+                                                    <div class="card m-3 zoom" style="width: 15rem;">
+                                                        <img class="card-img-top" src="~/img/@food.PhotoPath">
+                                                        <div class="card-body" style="background-color:#fefee3">
+                                                            <h5 class="card-title" style="color:#D68C45">Tên: @food.Name</h5>
+                                                            <p class="card-text" style="color:#D68C45">Giá: <b>@string.Format("{0:N0} VND", @food.Price)</b></p>
+                                                            <a asp-action="UpdateFood" asp-route-id="@food.Id" class="btn btn-success" id="tag-a-open-update">Update</a>
+                                                            <a asp-action="DeleteFood" asp-route-id="@food.Id" class="btn btn-danger" id="tag-a-delete">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
-</html>

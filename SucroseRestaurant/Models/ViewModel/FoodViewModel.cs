@@ -17,10 +17,8 @@ namespace Admin.Models.ViewModel
 
         [Required(ErrorMessage = "Please insert the food price")]
         public float Price { get; set; }
-
-        [ForeignKey("Category")]
         public int CategoryId { get; set; }
-        public IEnumerable<SelectListItem> Categories { get; set; }
+        public IEnumerable<SelectListItem>? Categories { get; set; }
 
         public int Stock { get; set; }
 

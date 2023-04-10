@@ -58,7 +58,6 @@ namespace Admin.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoPath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Price")
@@ -69,25 +68,7 @@ namespace Admin.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Foods");
-                });
-
-            modelBuilder.Entity("Admin.Models.Foods.Food", b =>
-                {
-                    b.HasOne("Admin.Models.Categories.Category", "category")
-                        .WithMany("Foods")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("category");
-                });
-
-            modelBuilder.Entity("Admin.Models.Categories.Category", b =>
-                {
-                    b.Navigation("Foods");
                 });
 #pragma warning restore 612, 618
         }

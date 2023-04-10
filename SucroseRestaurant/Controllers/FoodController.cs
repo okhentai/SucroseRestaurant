@@ -31,16 +31,16 @@ namespace Admin.Controllers
         }
         public IActionResult DeleteFood(int id)
         {
-            foodRepository.DeleteFood(foodRepository.GetFood(id));
-            return View("List", foodRepository.GetAll());
+            foodRepository.DeleteFood(id);
+            return RedirectToAction("List");
         }
         [HttpGet]
         public IActionResult AddFood()
         {
             FoodViewModel model = new FoodViewModel();
             // model.GameList = new List<Game>();
-
             model.Categories = GetlistCategory();
+
             return View(model);
         }
         [HttpPost]
@@ -66,7 +66,8 @@ namespace Admin.Controllers
                 foodRepository.AddFood(food);
                 return RedirectToAction("List");
             }
-            return View();
+            model.Categories = GetlistCategory();
+            return View(model);
         }
         [HttpGet]
         public IActionResult UpdateFood(int id)
@@ -94,15 +95,15 @@ namespace Admin.Controllers
 
             var listCateogry = categoryRepository.GetCategories();
 
-            foreach (var game in listCateogry)
+            foreach (var category in listCateogry)
             {
-                    listCategoryName.Add(
-                    new SelectListItem
-                    {
-                        Text = game.Name,
-                        Value = game.Id.ToString()
-                    }
-                );
+                listCategoryName.Add(
+                new SelectListItem
+                {
+                    Text = category.Name,
+                    Value = category.Id.ToString()
+                }
+            );
             }
 
             return listCategoryName;

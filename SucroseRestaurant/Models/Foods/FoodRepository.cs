@@ -18,10 +18,19 @@ namespace Admin.Models.Foods
             return food;
         }
 
-        public Food DeleteFood(Food food)
+        public Food DeleteFood(int id)
         {
-            appDbContext?.Foods.Remove(food);
-            appDbContext?.SaveChanges();
+            Food? food = appDbContext.Foods.Find(id);
+            if (food != null)
+            {
+                appDbContext.Foods.Remove(food);
+                appDbContext.SaveChanges();
+
+            }
+            else
+            {
+                throw new Exception("Food not found");
+            }
             return food;
         }
 
