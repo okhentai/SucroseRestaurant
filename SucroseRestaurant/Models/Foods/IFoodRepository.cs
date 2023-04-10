@@ -1,4 +1,4 @@
-﻿namespace SucroseRestaurant.Models.Foods
+﻿namespace Admin.Models.Foods
 {
     public interface IFoodRepository
     {
@@ -6,6 +6,6 @@
         IEnumerable<Food> GetAll();
         Food AddFood(Food food);
         Food UpdateFood(Food food);
-        Food DeleteFood(Food food);
+        Food DeleteFood(int id);
     }
 }

@@ -1,4 +1,5 @@
-﻿
+﻿@model Admin.Models.ViewModel.FoodViewModel
+
 <body>
     <div class="wrapper" bis_skin_checked="1">
         <!--Main-->
@@ -14,51 +15,40 @@
                                 <div class="card" style="box-shadow: unset" bis_skin_checked="1">
                                     <div class="card-body" bis_skin_checked="1">
                                         <br>
-                                        <form>
-                                            <input type="hidden">
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="full_name" class="col-md-4 col-form-label text-md-right">
-                                                    Thông tin 01
-                                                </label>
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input class="form-control" value="" required="" placeholder="Thông tin 01">
-                                                </div>
+                                        <form asp-action="AddFood" enctype="multipart/form-data" method="post">
+                                            <div asp-validation-summary="All" class="text-danger"></div>
+                                            <div class="form-group">
+                                                <label asp-for="Name">Name:</label>
+                                                <input asp-for="Name" type="text" class="form-control" />
                                             </div>
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="full_name" class="col-md-4 col-form-label text-md-right">
-                                                    Thông tin 02
-                                                </label>
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input class="form-control" value="" required="" placeholder="Thông tin 02">
-                                                </div>
+                                            <div class="form-group">
+                                                <label asp-for="Description">Decription:</label>
+                                                <textarea asp-for="Description" class="form-control">
+                                                    Please insert food description here
+                                                </textarea>
                                             </div>
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="full_name" class="col-md-4 col-form-label text-md-right">
-                                                    Thông tin 03
-                                                </label>
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input class="form-control" value="" required="" placeholder="Thông tin 03">
-                                                </div>
+                                            <div class="form-group">
+                                                <label asp-for="Price">Price:</label>
+                                                <input asp-for="Price" type="number" step="1000" class="form-control" />
                                             </div>
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="full_name" class="col-md-4 col-form-label text-md-right">
-                                                    Thông tin 04
-                                                </label>
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input class="form-control" value="" required="" placeholder="Thông tin 04">
-                                                </div>
+                                            <div class="form-group">
+                                                <label>Category:</label>
+                                                <br>
+                                                <select asp-for="CategoryId" asp-items="@Model.Categories" class="form-control">
+                                                    <option disabled="" selected="">
+                                                        Select Category
+                                                    </option>
+                                                </select>
                                             </div>
-
-                                            <div class="form-group row mb-0" bis_skin_checked="1">
-                                                <div class="col-md-8 offset-md-4" bis_skin_checked="1">
-                                                    <button type="submit" class="btn btn-primary">
-                                                        Add
-                                                    </button>
-                                                    <a asp-controller="Account" asp-action="Login" class="btn btn-light" bis_skin_checked="1">
-                                                        Reset
-                                                    </a>
-                                                </div>
+                                            <div class="form-group">
+                                                <label asp-for="Stock">Stock:</label>
+                                                <input asp-for="Stock" type="number" class="form-control" />
                                             </div>
+                                            <div class="form-group">
+                                                <label asp-for="PhotoPath">PhotoPath:</label>
+                                                <input asp-for="PhotoPath" type="file" class="form-control" />
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Create</button>
                                         </form>
                                     </div>
                                 </div>

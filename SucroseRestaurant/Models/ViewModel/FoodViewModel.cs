@@ -1,10 +1,11 @@
 ﻿using Admin.Models.Categories;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Admin.Models.Foods
+namespace Admin.Models.ViewModel
 {
-    public class Food
+    public class FoodViewModel
     {
         public int Id { get; set; }
 
@@ -16,13 +17,11 @@ namespace Admin.Models.Foods
 
         [Required(ErrorMessage = "Please insert the food price")]
         public float Price { get; set; }
-
-        [ForeignKey("Category")]
         public int CategoryId { get; set; }
+        public IEnumerable<SelectListItem>? Categories { get; set; }
 
         public int Stock { get; set; }
 
-        public string? PhotoPath { get; set; }
-
+        public IFormFile PhotoPath { get; set; }
     }
 }
