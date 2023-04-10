@@ -23,7 +23,9 @@
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="Description">Decription:</label>
-                                                <textarea asp-for="Description" class="form-control" />
+                                                <textarea asp-for="Description" class="form-control">
+                                                    Please insert food description here
+                                                </textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label asp-for="Price">Price:</label>
@@ -31,7 +33,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Category:</label>
-                                                <select asp-for="CategoryId" asp-items="@Model.Categories" class="tc-w-[50%]">
+                                                <br>
+                                                <select asp-for="CategoryId" asp-items="@Model.Categories" class="form-control">
                                                     <option disabled ="" selected ="">
                                                         Select Category
                                                     </option>

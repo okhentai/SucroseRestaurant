@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Admin.Controllers
 {
-    public class ProductController : Controller
+    public class FoodController : Controller
     {
         private readonly IFoodRepository foodRepository;
         private readonly ICategoryRepository categoryRepository;
         private readonly IWebHostEnvironment webHostEnvironment;
 
-        public ProductController(IFoodRepository foodRepository, ICategoryRepository categoryRepository, IWebHostEnvironment webHostEnvironment)
+        public FoodController(IFoodRepository foodRepository, ICategoryRepository categoryRepository, IWebHostEnvironment webHostEnvironment)
         {
             this.foodRepository = foodRepository;
             this.categoryRepository = categoryRepository;
