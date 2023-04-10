@@ -9,8 +9,7 @@ namespace Admin.Models.Categories
         [Required(ErrorMessage = "Please insert category name")]
         public string Name { get; set; }
 
-        //RelationShip to Food 
-        public List<Food>? Foods { get; set; }
+        public List<Food> Foods { get; set; }
     }
 }
     

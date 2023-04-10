@@ -1,5 +1,6 @@
 ﻿using Admin.Models;
 using Admin.Models.Categories;
+using Admin.Models.Foods;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<AppDbContext>(optionsAction =>
     optionsAction.UseSqlServer("name=ConnectionStrings:Localdb")
     );
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 
 var app = builder.Build();
 

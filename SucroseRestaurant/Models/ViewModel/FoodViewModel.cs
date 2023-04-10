@@ -1,6 +1,7 @@
 ﻿using Admin.Models.Categories;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Admin.Models.ViewModel
 {
@@ -19,7 +20,7 @@ namespace Admin.Models.ViewModel
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
-        public Category category { get; set; }
+        public IEnumerable<SelectListItem> Categories { get; set; }
 
         public int Stock { get; set; }
 
