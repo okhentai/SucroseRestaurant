@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace Admin.Models
+namespace Admin.Data
 {
     public class AppDbContext : DbContext
     {
