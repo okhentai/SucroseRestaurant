@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/css/thietke.css" asp-append-version="true">
     <!-- Liên kết với font awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 <body class="sidebar-collapse layout-top-nav" bis_skin_checked="1" style="height: auto;">
     <div class="wrapper" bis-skin-checked="1">
@@ -60,7 +61,7 @@
                             </li>
                         </ul>
 
-                        <nav class=" navbar-nav" style="position: absolute;right: 35px;" bis_skin_checked="1">
+                        <div class="navbar-nav" style="position: absolute;right: 35px;" bis_skin_checked="1">
                             <form class="form-inline">
                                 <button asp-controller="Account" asp-action="Register" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
                                     Register
@@ -69,7 +70,7 @@
                                     Login
                                 </button>
                             </form>
-                        </nav>
+                        </div>
                     </div>
 
                     <!-- Right navbar links -->
@@ -129,6 +130,11 @@
             </div>
         </footer>
     </div>
+
+    <!--Add-->
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+
   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

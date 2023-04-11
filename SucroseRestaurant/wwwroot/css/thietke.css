@@ -879,6 +879,17 @@ body {
     text-align: center;
     margin-top: 100px;
 }
+.navbar-nav {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; 
+    -webkit-flex-direction: column; 
+    -ms-flex-direction: column;
+    flex-direction: column; 
+    padding-left: 0; 
+    margin-bottom: 0; 
+    list-style: none;
+}
 
 
 
