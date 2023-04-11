@@ -25,9 +25,10 @@ namespace Admin.Controllers
             return View(foodRepository.GetAll());
         }
 
-        public IActionResult DetailsFood()
+        public IActionResult DetailsFood(int id)
         {
-            return View();
+            Food food = foodRepository.GetFood(id);
+            return View(food);
         }
         public IActionResult DeleteFood(int id)
         {
@@ -72,13 +73,45 @@ namespace Admin.Controllers
         [HttpGet]
         public IActionResult UpdateFood(int id)
         {
-            return View(foodRepository.GetFood(id));
+            Food food = foodRepository.GetFood(id);
+            FoodViewModel model = new FoodViewModel()
+            {
+                Id = id,
+                Name = food.Name,
+                Description = food.Description,
+                Price = food.Price,
+                Categories = GetlistCategory(),
+                Stock = food.Stock
+            };
+            
+            return View("UpdateFood",model);
         }
+        //Đang bị lỗi chỗ này
         [HttpPost]
-        public IActionResult UpdateFood(Food food)
+        public IActionResult UpdateFood(FoodViewModel model)
         {
-            foodRepository.UpdateFood(food);
-            return View("List", foodRepository.GetAll());
+            if (ModelState.IsValid)
+            {
+                string fileName = null;
+                if (model.PhotoPath != null)
+                {
+                    IFormFile image = model.PhotoPath;
+                    ProcessImage(image, ref fileName);
+                }
+                Food food = new Food()
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    Description = model.Description,
+                    Price = model.Price,
+                    CategoryId = model.CategoryId,
+                    Stock = model.Stock,
+                    PhotoPath = fileName
+                };
+                foodRepository.UpdateFood(food);
+                return RedirectToAction("List");
+            }
+            return View(model);
         }
         //Hàm xử lý ảnh
         private void ProcessImage(IFormFile image, ref string fileName)

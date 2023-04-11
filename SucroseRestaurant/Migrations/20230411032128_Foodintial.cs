@@ -5,7 +5,7 @@
 namespace Admin.Migrations
 {
     /// <inheritdoc />
-    public partial class FoodIntial : Migration
+    public partial class Foodintial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -306,7 +306,7 @@ body {
         text-align: center;
         margin-bottom: 30px;
         font-weight: bold;
-        color: #fff;
+        color: #008b88;
         text-shadow: 0 0 10px #5853ad, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
     }
     .guide__title::before {
@@ -582,7 +582,7 @@ body {
         border-color: #fff;
     }
     .guide__title {
-        color: #ffc107;
+        color: #008b88;
         text-shadow: 0 0 7px #111111, 0 0 2px #111111, 0 0 40px #ffc107;
     }
     .h.h4.link-active {
@@ -860,8 +860,24 @@ body {
     margin: 0 auto;
 }
 
-.zoom:hover {
+.zoom:hover{
     transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.detailsShow:hover  .details {
+    display: block;
+}
+
+.details {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    opacity: 0.5;
+    padding: 1em;
+    display: none;
+    text-align: center;
+    margin-top: 100px;
 }
 
 

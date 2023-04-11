@@ -17,6 +17,7 @@ namespace Admin.Models.Foods
         [Required(ErrorMessage = "Please insert the food price")]
         public float Price { get; set; }
 
+        [Required(ErrorMessage = "Please insert the food category")]
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 

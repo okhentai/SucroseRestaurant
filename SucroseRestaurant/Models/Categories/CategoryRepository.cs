@@ -1,4 +1,6 @@
-﻿namespace Admin.Models.Categories
+﻿using Admin.Data;
+
+namespace Admin.Models.Categories
 {
     public class CategoryRepository : ICategoryRepository
     {

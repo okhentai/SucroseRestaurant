@@ -8,7 +8,7 @@
             <section class="content">
                 <div class="container-fluid" bis_skin_checked="1">
                     <center><img src="~/img/city.png" class="city__icon"></center>
-                    <h1 class="guide__title" style="margin-bottom: 72px;">Add Category</h1>
+                    <h1 class="guide__title" style="margin-bottom: 72px;">Food list</h1>
                     <div class="container" bis_skin_checked="1">
 
                         <div class="row justify-content-center" bis_skin_checked="1">
@@ -16,7 +16,7 @@
                                 <div class="card" style="box-shadow: unset" bis_skin_checked="1">
                                     <div class="card-body" bis_skin_checked="1">
                                         <br>
-                                        <button type="button m-3" class="btn btn-primary">
+                                        <button type="button" class="btn btn-primary">
                                             <a asp-action="AddFood" class="text-decoration-none text-white">Create</a>
                                         </button>
 
@@ -24,8 +24,11 @@
                                             @foreach (var food in @Model)
                                             {
                                                 <div class="col-sm">
-                                                    <div class="card m-3 zoom" style="width: 15rem;">
-                                                        <img class="card-img-top" src="~/img/@food.PhotoPath">
+                                                    <div class="card m-3 zoom detailsShow" style="width: 15rem;">
+                                                        <img class="card-img-top" src="~/img/@food.PhotoPath" style="height: 10rem"/>
+                                                        <div class="details">
+                                                            <a asp-action="DetailsFood" asp-route-id="@food.Id" class="card-text" style="color:white">Thông tin chi tiết</a>
+                                                        </div>
                                                         <div class="card-body" style="background-color:#fefee3">
                                                             <h5 class="card-title" style="color:#D68C45">Tên: @food.Name</h5>
                                                             <p class="card-text" style="color:#D68C45">Giá: <b>@string.Format("{0:N0} VND", @food.Price)</b></p>
