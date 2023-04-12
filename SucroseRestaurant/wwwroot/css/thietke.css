@@ -1,7 +1,80 @@
 body {
     background: #fff url('../img/bg.jpg') no-repeat fixed;
     background-size: cover;
-}    
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    padding: 15px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    margin-left: -100px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+    .navigation a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: .5s;
+    }
+
+    .navigation a:hover::after {
+        transform: scaleX(1);
+    }
+/*reponsive header*/
+@media (max-width: 920px) {
+    .navigation a {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 920px) {
+    header {
+        display: flex;
+        width: 130%;
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        display: flex;
+        width: 120%;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        display: flex;
+        width: 130%;
+    }
+}
+
+
+
     .note__title {
         width: 100%;
         line-height: 34px;
@@ -879,7 +952,7 @@ body {
     text-align: center;
     margin-top: 100px;
 }
-.navbar-nav {
+.okok {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; 
