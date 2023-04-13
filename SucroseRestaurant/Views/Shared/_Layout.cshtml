@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/css/all.min.css">
     <link rel="icon" type="image/png" href="~/img/icon.png">
@@ -24,91 +25,90 @@
     <link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen" property="" />
 
 </head>
-<body class="sidebar-collapse layout-top-nav" bis_skin_checked="1" style="height: auto;">
-    <div class="wrapper" bis-skin-checked="1">
-        <!--Header-->
-        <header>
-            <nav class="navigation" style="margin-right:auto">
-                <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="text-shadow: 2px 2px 2px #000000;color: #fff;"></i></span>
-                </button>
-                <div class="collapse navbar-collapse order-3" id="navbarCollapse" bis_skin_checked="1">
-                    <ul class="okok">
-                        <a asp-controller="Main" asp-action="Main" class="nav-link menu-header shine-active"><i class="ficon fa-lg fa fa-home"></i></a>
-                        <!-- Menu -->
-                        <a asp-controller="Food" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Menu</a>
-                        <!--Category-->
-                        <a asp-controller="Category" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Category</a>
-                        <!-- Cart -->
-                        <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header" bis_skin_checked="1">Cart</a>
-                        <!-- About Us -->
-                        <a asp-controller="AboutUs" asp-action="AboutUs" class="nav-link menu-header" bis_skin_checked="1">About Us</a>
-                    </ul>
-                </div>
-            </nav>
-            <nav class="navigation">
-                <div>
-                    <button asp-controller="Account" asp-action="Register" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
-                        Register
-                    </button>
-                    <button asp-controller="Account" asp-action="Login" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
-                        Login
-                    </button>
-                </div>
-            </nav>
-        </header>
-
-        <!--Body-->
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-
-        <!--Footer-->
-        <footer class="mt-5 p-3" style="background: rgb(27 25 60 / 58%);color: #fff; margin-right: -6px; margin-left: -8px">
-            <div class="container-lg" bis_skin_checked="1">
-                <h2 class="guide__title mt-3">
-                    <a href="#">
-                        <img src="#" style="margin-top: -8px;height: 45px">
-                    </a>
-                </h2>
-                <div class="row" bis_skin_checked="1">
-                    <section class="col-12 col-lg-4">
-                        <div class="h h4 link-active" bis_skin_checked="1">
-                            <a >Nhà hàng Sucrose</a>
-                        </div>
-                        <p>
-                            <span style="color: rgb(255, 255, 255); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;" class="success">
-                                <p class="m-0">Đây là bài báo cáo cuối kỳ web 2 của nhóm Sucrose</p>
-                                <p class="m-0">Không có tính thương mại</p>
-                                <p class="m-0">Dùng cho mục đích học tập ^^!</p>
-                            </span>
-                            <br>
-                        </p>
-                        <p class="mt-3 small">©DH20LT - Bản quyền thuộc về Sucrose Team</p>
-                        <div class="h h5" bis_skin_checked="1">
-                            <i class="fa fa-language"></i> Ngôn ngữ
-                        </div>
-                        <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">English</a>
-                        <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">Mặc định</a>
-                    </section>
-                    <section class="col-12 col-lg-4">
-                        <div class="h h4 link-active" bis_skin_checked="1">Thành viên của nhóm</div>
-                        <p class="m-0">Trương An Khang</p>
-                        <p class="m-0">Bùi Ngọc Tâm</p>
-                    </section>
-                    <section class="col-12 col-lg-4">
-                        <a class="fab fa-facebook-square fa-2x mr-2" href="https://www.facebook.com/sansy.tak"></a>
-                        <a class="fab fa-youtube fa-2x" ></a>
-                        <p class="mt-3 fw-bold"><i class="fa fa-phone mr-2"></i>Phone: 0123456789 (8h-22h)</p>
-                        <p class="fw-bold"><i class="fa fa-clock mr-2"></i>Thời gian làm việc: 8h - 24h</p>
-                        <p class="fw-bold"><i class="fa fa-map-marked-alt mr-2"></i>Địa chỉ: 02 Trương Văn Bang, Tp Vũng Tàu - tỉnh Bà Rịa Vũng Tàu</p><p class="m-0"></p>
-                    </section>
-                </div>
+<body>
+    <!--Header-->
+    <header>
+        <nav class="navigation" style="margin-right:auto">
+            <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars" style="text-shadow: 2px 2px 2px #000000;color: #fff;"></i></span>
+            </button>
+            <div class="collapse navbar-collapse order-3" id="navbarCollapse" bis_skin_checked="1">
+                <ul class="okok">
+                    <a asp-controller="Main" asp-action="Main" class="nav-link menu-header shine-active"><i class="ficon fa-lg fa fa-home"></i></a>
+                    <!-- Menu -->
+                    <a asp-controller="Food" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Menu</a>
+                    <!--Category-->
+                    <a asp-controller="Category" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Category</a>
+                    <!-- Cart -->
+                    <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header" bis_skin_checked="1">Cart</a>
+                    <!-- About Us -->
+                    <a asp-controller="AboutUs" asp-action="AboutUs" class="nav-link menu-header" bis_skin_checked="1">About Us</a>
+                </ul>
             </div>
-        </footer>
+        </nav>
+        <nav class="navigation">
+            <div>
+                <button asp-controller="Account" asp-action="Register" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
+                    Register
+                </button>
+                <button asp-controller="Account" asp-action="Login" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
+                    Login
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!--Body-->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
+
+    <!--Footer-->
+    <footer class="mt-5 p-3" style="background: rgb(27 25 60 / 58%);color: #fff; margin-right: -6px; margin-left: -8px">
+        <div class="container-lg" bis_skin_checked="1">
+            <h2 class="guide__title mt-3">
+                <a href="#">
+                    <img src="#" style="margin-top: -8px;height: 45px">
+                </a>
+            </h2>
+            <div class="row" bis_skin_checked="1">
+                <section class="col-12 col-lg-4">
+                    <div class="h h4 link-active" bis_skin_checked="1">
+                        <a>Nhà hàng Sucrose</a>
+                    </div>
+                    <p>
+                        <span style="color: rgb(255, 255, 255); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;" class="success">
+                            <p class="m-0">Đây là bài báo cáo cuối kỳ web 2 của nhóm Sucrose</p>
+                            <p class="m-0">Không có tính thương mại</p>
+                            <p class="m-0">Dùng cho mục đích học tập ^^!</p>
+                        </span>
+                        <br>
+                    </p>
+                    <p class="mt-3 small">©DH20LT - Bản quyền thuộc về Sucrose Team</p>
+                    <div class="h h5" bis_skin_checked="1">
+                        <i class="fa fa-language"></i> Ngôn ngữ
+                    </div>
+                    <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">English</a>
+                    <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">Mặc định</a>
+                </section>
+                <section class="col-12 col-lg-4">
+                    <div class="h h4 link-active" bis_skin_checked="1">Thành viên của nhóm</div>
+                    <p class="m-0">Trương An Khang</p>
+                    <p class="m-0">Bùi Ngọc Tâm</p>
+                </section>
+                <section class="col-12 col-lg-4">
+                    <a class="fab fa-facebook-square fa-2x mr-2" href="https://www.facebook.com/sansy.tak"></a>
+                    <a class="fab fa-youtube fa-2x"></a>
+                    <p class="mt-3 fw-bold"><i class="fa fa-phone mr-2"></i>Phone: 0123456789 (8h-22h)</p>
+                    <p class="fw-bold"><i class="fa fa-clock mr-2"></i>Thời gian làm việc: 8h - 24h</p>
+                    <p class="fw-bold"><i class="fa fa-map-marked-alt mr-2"></i>Địa chỉ: 02 Trương Văn Bang, Tp Vũng Tàu - tỉnh Bà Rịa Vũng Tàu</p><p class="m-0"></p>
+                </section>
+            </div>
+        </div>
+    </footer>
+ 
 
     <!--Add-->
     <script src="~/js/jquery.js"></script>
