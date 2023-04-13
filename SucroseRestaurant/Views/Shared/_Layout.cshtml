@@ -14,6 +14,15 @@
     <!-- Liên kết với font awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+
+    <!-- Bootstrap-Core-CSS -->
+    <link href="~/css/pogo-slider.min.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Banner-Slider-CSS -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css" type="text/css" media="all" />
+    <!-- owl carousel css (for welcome section) -->
+    <link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen" property="" />
+
 </head>
 <body class="sidebar-collapse layout-top-nav" bis_skin_checked="1" style="height: auto;">
     <div class="wrapper" bis-skin-checked="1">
@@ -24,17 +33,18 @@
                     <span class="navbar-toggler-icon"><i class="fas fa-bars" style="text-shadow: 2px 2px 2px #000000;color: #fff;"></i></span>
                 </button>
                 <div class="collapse navbar-collapse order-3" id="navbarCollapse" bis_skin_checked="1">
-                <ul class="okok">
-                    <a asp-controller="Main" asp-action="Main" class="nav-link menu-header shine-active"><i class="ficon fa-lg fa fa-home"></i></a>
-                    <!-- Menu -->
-                    <a asp-controller="Food" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Menu</a>
-                    <!--Category-->
-                    <a asp-controller="Category" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Category</a>
-                    <!-- Cart -->
-                    <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header" bis_skin_checked="1">Cart</a>
-                    <!-- About Us -->
-                    <a asp-controller="AboutUs" asp-action="AboutUs" class="nav-link menu-header" bis_skin_checked="1">About Us</a>
-                </ul>
+                    <ul class="okok">
+                        <a asp-controller="Main" asp-action="Main" class="nav-link menu-header shine-active"><i class="ficon fa-lg fa fa-home"></i></a>
+                        <!-- Menu -->
+                        <a asp-controller="Food" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Menu</a>
+                        <!--Category-->
+                        <a asp-controller="Category" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Category</a>
+                        <!-- Cart -->
+                        <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header" bis_skin_checked="1">Cart</a>
+                        <!-- About Us -->
+                        <a asp-controller="AboutUs" asp-action="AboutUs" class="nav-link menu-header" bis_skin_checked="1">About Us</a>
+                    </ul>
+                </div>
             </nav>
             <nav class="navigation">
                 <div>
@@ -104,7 +114,31 @@
     <script src="~/js/jquery.js"></script>
     <script src="~/js/bootstrap.js"></script>
 
+    <!-- JavaScript -->
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <!-- Default-JavaScript-File -->
+    <!-- Owl-Carousel-JavaScript (for welcome section) -->
+    <script src="~/js/owl.carousel.js"></script>
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+        });
+    </script>
+    <!-- //Owl-Carousel-JavaScript (for welcome section) -->
+
+    <!-- Pogo slider (for banner) -->
+    <script src="~/js/jquery.pogo-slider.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <!-- Pogo slider (for banner) -->
+
   
+    <!--Default-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
