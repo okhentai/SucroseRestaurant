@@ -1350,6 +1350,94 @@ body {
         background-color: #563434;
     }
 
+/*-- stats --*/
+
+section.stats_test {
+    background: url(../images/bg5.jpg) no-repeat center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+}
+
+.stats_left p {
+    font-size: 60px;
+    color: #00abff;
+    font-weight: 400;
+}
+
+.stats_left h4 {
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.stats_left i {
+    font-size: 40px;
+    color: #fff;
+}
+
+.inner_stat_wthree_agileits {
+    background: rgba(27, 27, 27, 0.58);
+}
+
+/*-- //stats --*/
+.ok2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.ok1 {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/*Đánh giá*/
+.testimonial {
+    padding-top: 100px;
+}
+
+    .testimonial .col-3 {
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.5s;
+    }
+
+        .testimonial .col-3 img {
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+
+        .testimonial .col-3:hover {
+            transform: translateY(-10px);
+        }
+
+.fa .fa-quote-left {
+    font-size: 34px;
+    color: #ff523b;
+}
+
+.col-3 p {
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+}
+
+.testimonial .col-3 h3 {
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+}
+
+
+
 
 
 
