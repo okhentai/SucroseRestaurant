@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="~/css/all.min.css">
     <link rel="icon" type="image/png" href="~/img/icon.png">
     <!-- Theme style -->
-    <link rel="stylesheet" href="~/css/adminlte.min.css">
+    @*<link rel="stylesheet" href="~/css/adminlte.min.css">*@
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <!-- Liên kết file CSS -->
     <link rel="stylesheet" href="~/css/thietke.css" asp-append-version="true">
     <!-- Liên kết với font awsome-->
@@ -24,12 +29,12 @@
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <!-- owl carousel css (for welcome section) -->
     <link rel="stylesheet" href="~/css/flexslider.css">
-
 </head>
+
 <body>
     <!--Header-->
-    <header>
-        <nav class="navbar navbar-expand-lg px-lg-3" style="margin-right:auto;position: sticky !important">
+    <header class="bg-black bg-opacity-50">
+        <nav class="navbar navbar-expand-lg px-lg-5" style="margin-right:auto;">
             <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fas fa-bars" style="text-shadow: 2px 2px 2px #000000;color: #fff;"></i></span>
             </button>
@@ -43,29 +48,27 @@
                     <!-- Cart -->
                     <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header" bis_skin_checked="1">Cart</a>
                     <!-- About Us -->
-                    <a asp-controller="AboutUs" asp-action="AboutUs" class="nav-link menu-header" bis_skin_checked="1">About Us</a>
+                    <a asp-controller="AboutUs" asp-action="Index" class="nav-link menu-header" bis_skin_checked="1">About Us</a>
                 </ul>
             </div>
         </nav>
         <nav class="navbar navbar-expand-lg">
             <div>
-                <button asp-controller="Account" asp-action="Register" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
+                <button asp-controller="Account" asp-action="Register" class="btn btn-success my-2 my-sm-0" style="margin:5px">
                     Register
                 </button>
-                <button asp-controller="Account" asp-action="Login" class="btn btn-outline-success my-2 my-sm-0" style="margin:5px">
+                <button asp-controller="Account" asp-action="Login" class="btn btn-success my-2 my-sm-0" style="margin:5px">
                     Login
                 </button>
             </div>
         </nav>
     </header>
-
     <!--Body-->
-    <div class="container px-5">
-        <main role="main" class="pb-3">
+    <div class="container">
+        @*<main role="main" class="pb-3">*@
             @RenderBody()
-        </main>
+            @*</main>*@
     </div>
-
     <!--Footer-->
     <footer class="mt-5 p-3" style="background: rgb(27 25 60 / 58%);color: #fff; margin-right: -6px; margin-left: -8px">
         <div class="container-lg" bis_skin_checked="1">
@@ -109,7 +112,7 @@
             </div>
         </div>
     </footer>
- 
+
 
     <!--Add-->
     <script src="~/js/jquery.js"></script>
@@ -175,7 +178,6 @@
         });
     </script>
     <!-- //flexSlider (for testimonials) -->
-
     <!-- stats -->
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.countup.js"></script>
@@ -183,11 +185,9 @@
         $('.counter').countUp();
     </script>
     <!-- //stats -->
-
     <!-- smooth scrolling -->
     <script src="js/SmoothScroll.min.js"></script>
     <!-- //smooth scrolling -->
-
     <!-- start-smoth-scrolling -->
     <script src="js/move-top.js"></script>
     <script src="js/easing.js"></script>
@@ -202,7 +202,6 @@
         });
     </script>
     <!-- start-smoth-scrolling -->
-
     <!-- smooth scrolling-bottom-to-top -->
     <script>
         $(document).ready(function () {
@@ -220,7 +219,6 @@
         });
     </script>
     <!-- //smooth scrolling-bottom-to-top -->
-
     <!-- Pogo slider (for banner) -->
     <script src="~/js/jquery.pogo-slider.min.js"></script>
     <script src="~/js/main.js"></script>
@@ -229,9 +227,14 @@
     <script src="~/js/ok.js"></script>
     <!-- Necessary-JavaScript-File-For-Bootstrap -->
 
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
 
-  
     <!--Default-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

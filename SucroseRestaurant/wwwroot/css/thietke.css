@@ -226,8 +226,6 @@ header {
     align-items: center;
     z-index: 99;
     margin-left: -100px;
-    background-color: rgba(0, 0, 0, .5);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 }
 
 .navigation a {

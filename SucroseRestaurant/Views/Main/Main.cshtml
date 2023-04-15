@@ -1,132 +1,108 @@
-﻿
-<body>
-	<!-- Welcome -->
-	<div class="wrapper" bis_skin_checked="1">
-		<main>
-			<div class="container" bis_skin_checked="1">
-				<center><img src="~/img/city.png" class="city__icon"></center>
-				<h1 class="guide__title" style="margin-bottom: 72px;">Welcome to Sucrose Restaurant</h1>
-			</div>
+﻿<div class="container bg-black bg-opacity-50 p-lg-5 my-5">
+    <!-- Welcome -->
+    <div class="wrapper" bis_skin_checked="1">
+        <main>
+            <div class="container" bis_skin_checked="1">
+                <center>
+                    <img src="~/img/city.png" class="city__icon">
+                </center>
+                <h1 class="guide__title" style="margin-bottom: 72px;">Welcome to Sucrose Restaurant</h1>
+            </div>
 
 
-			<div class="row">
-				<div class="col-lg-6 aboutleft">
-					<p class="about-left-agile text-dark text-capitalize font-weight-bold">Về chúng tôi</p>
-					<h3 class="about-headagile text-capitalize mt-2 mb-4 text-right">Vị ngon trên từng món ăn</h3>
-					<p class="my-3">
-						Nhà hàng Sucrose với châm ngôn "không ngon không lấy tiền" hứa hẹn sẽ mang đến cho quý khách những món ăn ngon và trải nghiệm
-						tuyệt vời ở nhà hàng. Những món ăn được làm bởi các đầu bếp nổi tiếng hàng đầu DH20LT: KhoiBoss, SonDaika, KhangSus, ... sẽ không
-						làm quý khách thất vọng.
-					</p>
-					<p>
-						Nhà hàng Sucrose đã tiếp đón nhiều khách quý đến như: TMA, TienCho, ... và được đánh giá rất cao. Còn bạn thì sao ?
-						Hãy đến và trải nghiệm tại Sucrose Restaurant!
-					</p>
-					<a asp-controller="Food" asp-action="List" class="okehe">Let's go! &#8594;</a>
-				</div>
-				<div class="col-lg-6 aboutright">
-					<div class="large-12 columns">
-						<!-- Owl-Carousel -->
-						<div id="owl-demo" class="owl-carousel owl-theme text-center agileinfo-gallery-row">
-							<a class="item g1">
-								<img class="lazyOwl img-fluid" src="/img/w1.png" title="Ice Cream" alt="" />
-							</a>
-							<a class="item g1">
-								<img class="lazyOwl img-fluid" src="/img/w2.png" title="Ice Cream" alt="" />
-							</a>
-							<a class="item g1">
-								<img class="lazyOwl img-fluid" src="/img/w3.png" title="Ice Cream" alt="" />
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</main>
-	</div>
-	<!-- about bottom -->
-	<div class="video-w3l text-center py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<h3 class="text-white">Không chỉ là món ăn, mà đó là Sucrose</h3>
-			<p class="font-italic p-3">Death is like the wind, always by my side</p>
-			<a class="okehe" href="#" role="button">Read More</a>
-		</div>
-	</div>
-	<!-- //about bottom -->
-	<!-- stats -->
-	<section class="stats_test py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<div class="d-flex inner_stat_wthree_agileits text-center">
-				<div class="col-sm-4 py-5 stats_left counter_grid">
-					<i class="far fa-building"></i>
-					<p class="counter">145</p>
-					<h4>Branches</h4>
-				</div>
-				<div class="col-sm-4 py-5 stats_left counter_grid2 border-left border-right">
-					<i class="far fa-edit"></i>
-					<p class="counter">563</p>
-					<h4>Food Items</h4>
-				</div>
-				<div class="col-sm-4 py-5 stats_left counter_grid1">
-					<i class="fas fa-users"></i>
-					<p class="counter">165</p>
-					<h4>Qualified Chefs</h4>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- //stats -->
-	<!-- Đánh giá -->
+            <div>
+                <div class="row" style="color:aliceblue">
+                    <div class="col-lg-6 aboutleft">
+                        <h3 class="about-headagile text-capitalize mt-2 mb-4 text-right">Vị ngon trên từng món ăn</h3>
+                        <p class="my-3">
+                            Nhà hàng Sucrose với châm ngôn "không ngon không lấy tiền" hứa hẹn sẽ mang đến cho quý khách những món ăn ngon và trải nghiệm tuyệt vời ở nhà hàng. Những món ăn được làm bởi các đầu bếp nổi tiếng hàng đầu DH20LT: KhoiBoss, SonDaika, KhangSus, ... sẽ không làm quý khách thất vọng.
+                        </p>
+                        <p>
+                            Nhà hàng Sucrose đã tiếp đón nhiều khách quý đến như: TMA, TienCho, ... và được đánh giá rất cao. Còn bạn thì sao ? Hãy đến và trải nghiệm tại Sucrose Restaurant!
+                        </p>
+                        <a asp-controller="Food" asp-action="List" class="okehe">Let's go! &#8594;</a>
+                    </div>
+                    <div class="col-lg-6 aboutright">
+                        <div class="large-12 columns">
+                            <!-- Owl-Carousel -->
+                            <div id="owl-demo" class="owl-carousel owl-theme text-center agileinfo-gallery-row">
+                                <a class="item g1">
+                                    <img class="lazyOwl img-fluid" src="/img/w1.png" title="Ice Cream" alt="" />
+                                </a>
+                                <a class="item g1">
+                                    <img class="lazyOwl img-fluid" src="/img/w2.png" title="Ice Cream" alt="" />
+                                </a>
+                                <a class="item g1">
+                                    <img class="lazyOwl img-fluid" src="/img/w3.png" title="Ice Cream" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- about bottom -->
+    <div class="video-w3l text-center py-5 bg-black bg-opacity-50 p-lg-3 my-5">
+        <div class="container py-xl-5 py-lg-3">
+            <h3 class="text-white">Không chỉ là món ăn, mà đó là Sucrose</h3>
+            <p class="font-italic p-3">Death is like the wind, always by my side</p>
+            <a class="okehe" href="#" role="button">Read More</a>
+        </div>
+    </div>
+    <!-- //about bottom -->
+    <!-- Đánh giá -->
 
-	<div class="testimonial">
-		<div class="title-heading text-center mb-sm-5 mb-4">
-			<h3 class="title text-capitalize text-dark">what our people say's</h3>
-			<p class="title-text font-weight-light font-italic mt-2">Ut enim ad minim veniam</p>
-		</div>
-		<div class="ok1">
-			<div class="ok2">
-				<div class="col-3">
-					<i class="fa fa-quote-left"></i>
-					<p>Đồ ăn ngon, wifi mạnh, chơi LOL không bị lag</p>
-					<div class="rating">
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star-o"></i>
-					</div>
-					<img src="~/img/tma.jpg">
-					<h3>Nguyễn Hoàng Tâm</h3>
-				</div>
-				<div class="col-3">
-					<i class="fa fa-quote-left"></i>
-					<p>Sucrose làm tôi nhớ đến người ấy!</p>
-					<div class="rating">
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star-o"></i>
-					</div>
-					<img src="~/img/khoi.jpg">
-					<h3>Tạ Quang Khôi</h3>
-				</div>
-				<div class="col-3">
-					<i class="fa fa-quote-left"></i>
-					<p>
-						Không chỉ là dánh giá, mà còn là Sucrose
-					</p>
-					<div class="rating">
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star-o"></i>
-					</div>
-					<img src="~/img/khang.jpg">
-					<h3>Trương An Khang</h3>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="testimonial">
+        <div class="title-heading text-center mb-sm-5 mb-4">
+            <h3 class="title text-capitalize text-white">what our people say's</h3>
+        </div>
+        <div class="ok1">
+            <div class="ok2" style="color:aliceblue">
+                <div class="col-3 bg-light p-lg-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Đồ ăn ngon, wifi mạnh, chơi LOL không bị lag</p>
+                    <div class="rating" style="color:yellow">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="~/img/tma.jpg">
+                    <h3>Nguyễn Hoàng Tâm</h3>
+                </div>
+                <div class="col-3 bg-light p-lg-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Sucrose làm tôi nhớ đến người ấy!</p>
+                    <div class="rating" style="color:yellow">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="~/img/khoi.jpg">
+                    <h3>Tạ Quang Khôi</h3>
+                </div>
+                <div class="col-3 bg-light p-lg-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        Không chỉ là dánh giá, mà còn là Sucrose
+                    </p>
+                    <div class="rating" style="color:yellow">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="~/img/khang.jpg">
+                    <h3>Trương An Khang</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</body>
+
+</div>

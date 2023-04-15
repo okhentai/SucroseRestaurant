@@ -23,8 +23,8 @@
                                         <div class="row">
                                             @foreach (var food in @Model)
                                             {
-                                                <div class="col-lg">
-                                                    <div class="card m-1 zoom detailsShow" style="width: 15rem;">
+                                                <div class="col-lg-4 my-2">
+                                                    <div class="card zoom detailsShow" style="width: 15rem;">
                                                         <img class="card-img-top" src="~/img/@food.PhotoPath" style="height: 10rem"/>
                                                         <div class="details">
                                                             <a asp-action="DetailsFood" asp-route-id="@food.Id" class="card-text" style="color:white">Thông tin chi tiết</a>
