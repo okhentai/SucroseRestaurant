@@ -1,46 +1,78 @@
 ﻿@model IEnumerable<Admin.Models.Foods.Food>
 
 
-<body>
-    <div class="wrapper" bis_skin_checked="1">
-        <!--Main-->
-        <main>
-            <section class="content">
-                <div class="container-fluid" bis_skin_checked="1">
-                    <center><img src="~/img/city.png" class="city__icon"></center>
-                    <h1 class="guide__title" style="margin-bottom: 72px;">MENU</h1>
-                    <div class="container" bis_skin_checked="1">
+<div class="wrapper" bis_skin_checked="1">
+    <!--Main-->
+    <main>
+        <section class="content">
+            <div class="container-fluid" bis_skin_checked="1">
+                <center><img src="~/img/city.png" class="city__icon"></center>
+                <h1 class="guide__title" style="margin-bottom: 72px;">MENU</h1>
+                <div class="container" bis_skin_checked="1">
 
-                        <div class="row justify-content-center" bis_skin_checked="1">
-                            <div class="col" bis_skin_checked="1">
-                                <div class="card" style="box-shadow: unset" bis_skin_checked="1">
-                                    <div class="card-body" bis_skin_checked="1">
-                                        <div class="row">
-                                            @foreach (var food in @Model)
-                                            {
-                                                <div class="col-lg-3 my-lg-1 p-4">
-                                                    <div class="card zoom" style="width: 18rem;">
-                                                        <a type="button" asp-action="DetailsFood" asp-route-id ="@food.Id">
-                                                            <img class="card-img-top" src="~/img/@food.PhotoPath" style="height: 15rem" />
+                    <div class="row justify-content-center" bis_skin_checked="1">
+                        <div class="col" bis_skin_checked="1">
+                            <div class="card" style="box-shadow: unset" bis_skin_checked="1">
+                                <div class="card-body" bis_skin_checked="1">
+                                    <div class="row">
+                                        @foreach (var food in @Model)
+                                        {
+
+                                            <div class="col-lg-3 my-lg-1 p-4">
+                                                <div class="product-grid">
+                                                    <div class="product-image">
+                                                        <a class="image">
+                                                            <img class="pic-1" src="~/img/@food.PhotoPath">
+                                                            <img class="pic-2" src="~/img/@food.PhotoPath">
                                                         </a>
-                                                        <div class="card-body bg-light bg-opacity-100 text-black">
-                                                            <h5 class="card-title">@food.Name</h5>
-                                                            <p class="card-text">Giá: <b>@string.Format("{0:N0} VND", @food.Price)</b></p>
-                                                            <div class="d-grid gap-2 mx-auto">
-                                                                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@food.Id" class="btn btn-outline-danger mx-auto" id="tag-a-open-update">Add To Cart</a>
+                                                        <ul class="product-links">
+                                                            <li><a type="button" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@food.Id"><i class="fa fa-shopping-cart"></i></a></li>
+                                                            <li><a type="button" data-toggle="modal" data-target="#food-modal-@food.Id"><i class="fa fa-info-circle"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <h3 class="title"><p class="text-black">@food.Name</p></h3>
+                                                        <div class="price"><b>@string.Format("{0:N0} VND", @food.Price)</b></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal fade" id="food-modal-@food.Id" tabindex="-1" role="dialog" aria-labelledby="product-modal-@food.Id-label" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                    <div class="modal-content bg-default light">
+                                                        <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row align-items-center no-gutters">
+                                                                    <div class="col-md-5">
+                                                                        <img class="mw-100" alt="img" src="~/img/@food.PhotoPath">
+                                                                    </div>
+                                                                    <div class="col-md-7 padding-x3 text-black">
+                                                                        <h3 class="mb-50"><strong>@food.Name</strong></h3>
+                                                                        <p class="mb-50 text-secondary">Mô tả: @food.Description</p>
+                                                                        <p class="mb-50">Giá: <b>@string.Format("{0:N0} VND", food.Price)</b></p>
+                                                                        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@food.Id" class="btn btn-outline-danger">Add to cart</a>
+                                                                    </div>
+                                                                </div>
                                                             </div>
+                                                        </div>
+                                                        <div class="bg-wrap">
+                                                            <div class="bg"></div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            }
-                                        </div>
+                                            </div>
+                                            
+                                        }
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
-</body>
+            </div>
+        </section>
+    </main>
+</div>
+

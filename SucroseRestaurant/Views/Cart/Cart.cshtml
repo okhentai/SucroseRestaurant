@@ -13,31 +13,31 @@
             <div class="col-md-8" bis_skin_checked="1">
                 <div class="card" style="box-shadow: unset" bis_skin_checked="1">
                     <div class="card-body" bis_skin_checked="1">
-                        <table class="table table-bordered table-striped">
+                        <table class="table-responsive table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Item</th>
-                                    <th>Images</th>
-                                    <th>Quantity</th>
-                                    <th class="text-right">Price</th>
-                                    <th class="text-right">Subtotal</th>
+                                    <th class="text-center">Item</th>
+                                    <th class="text-center">Images</th>
+                                    <th class="text-center">Quantity</th>
+                                    <th class="text-center">Price</th>
+                                    <th class="text-center">Subtotal</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.Cart.Items)
                                 {
                                     <tr>
-                                        <td class="text-left">@item.food.Name</td>
+                                        <td class="text-center">@item.food.Name</td>
                                         <td class="text-center">
                                             <img class="img-thumbnail" src="~/img/@item.food.PhotoPath">
                                         </td>
-                                        <td class="text-left">
+                                        <td class="text-center">
                                             <input type="number" value="@item.Quantity" onchange="updateQuantity(@item.Quantity)"
                                                    asp-action="UpdateQuantity" asp-controller="Cart" asp-route-id="@item.food.Id"
-                                                   id="quantity-input" />
+                                                   id="quantity-input" style="width:100%"/>
                                         </td>
-                                        <td class="text-right">Giá: <b>@string.Format("{0:N0} VND", @item.food.Price)</td>
-                                        <td class="text-right">@((item.food.Price * item.Quantity).ToString("#,# VND"))</td>
+                                        <td class="text-center">Giá: <b>@string.Format("{0:N0} VND", @item.food.Price)</td>
+                                        <td class="text-center">@((item.food.Price * item.Quantity).ToString("#,# VND"))</td>
                                         <td class="text-center">
                                             <a class="btn btn-danger">Remove</a>
                                         </td>

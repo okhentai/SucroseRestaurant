@@ -28,7 +28,7 @@ namespace Admin.Controllers
         public IActionResult DetailsFood(int id)
         {
             Food food = foodRepository.GetFood(id);
-            return View(food);
+            return PartialView("FoodModal", food);
         }
         public IActionResult DeleteFood(int id)
         {
