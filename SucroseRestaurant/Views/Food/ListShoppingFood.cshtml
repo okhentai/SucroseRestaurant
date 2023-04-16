@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Admin.Models.Foods.Food>
+
+
+<body>
+    <div class="wrapper" bis_skin_checked="1">
+        <!--Main-->
+        <main>
+            <section class="content">
+                <div class="container-fluid" bis_skin_checked="1">
+                    <center><img src="~/img/city.png" class="city__icon"></center>
+                    <h1 class="guide__title" style="margin-bottom: 72px;">MENU</h1>
+                    <div class="container" bis_skin_checked="1">
+
+                        <div class="row justify-content-center" bis_skin_checked="1">
+                            <div class="col" bis_skin_checked="1">
+                                <div class="card" style="box-shadow: unset" bis_skin_checked="1">
+                                    <div class="card-body" bis_skin_checked="1">
+                                        <div class="row">
+                                            @foreach (var food in @Model)
+                                            {
+                                                <div class="col-lg-3 my-lg-1 p-4">
+                                                    <div class="card zoom" style="width: 18rem;">
+                                                        <a type="button" asp-action="DetailsFood" asp-route-id ="@food.Id">
+                                                            <img class="card-img-top" src="~/img/@food.PhotoPath" style="height: 15rem" />
+                                                        </a>
+                                                        <div class="card-body bg-light bg-opacity-100 text-black">
+                                                            <h5 class="card-title">@food.Name</h5>
+                                                            <p class="card-text">Giá: <b>@string.Format("{0:N0} VND", @food.Price)</b></p>
+                                                            <div class="d-grid gap-2 mx-auto">
+                                                                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@food.Id" class="btn btn-outline-danger mx-auto" id="tag-a-open-update">Add To Cart</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>

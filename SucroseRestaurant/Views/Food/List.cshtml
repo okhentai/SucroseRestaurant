@@ -26,9 +26,6 @@
                                                 <div class="col-lg-4 my-2">
                                                     <div class="card zoom detailsShow" style="width: 15rem;">
                                                         <img class="card-img-top" src="~/img/@food.PhotoPath" style="height: 10rem"/>
-                                                        <div class="details">
-                                                            <a asp-action="DetailsFood" asp-route-id="@food.Id" class="card-text" style="color:white">Thông tin chi tiết</a>
-                                                        </div>
                                                         <div class="card-body" style="background-color:#fefee3">
                                                             <h5 class="card-title" style="color:#D68C45">Tên: @food.Name</h5>
                                                             <p class="card-text" style="color:#D68C45">Giá: <b>@string.Format("{0:N0} VND", @food.Price)</b></p>

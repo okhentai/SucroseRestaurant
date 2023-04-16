@@ -1,62 +1,104 @@
-﻿
-<body>
-    <div class="wrapper" bis_skin_checked="1">
-        <!--Main-->
-        <main>
-            <div class="container-fluid" bis_skin_checked="1">
-                <center><img src="~/img/city.png" class="city__icon"></center>
-                <h1 class="guide__title" style="margin-bottom: 72px;">Giỏ Hàng</h1>
-            </div>
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Admin.Models.ViewModel.CartIndexViewModel
 
-            <div class="row justify-content-center" bis_skin_checked="1">
-                <div class="col-md-8" bis_skin_checked="1">
-                    <div class="card" style="box-shadow: unset" bis_skin_checked="1">
-                        <div class="card-body" bis_skin_checked="1">
-                            <table class="table table-bordered table-striped">
-                                <thead>
+<div class="wrapper" bis_skin_checked="1">
+    <!--Main-->
+    <main>
+        <div class="container-fluid" bis_skin_checked="1">
+            <center><img src="~/img/city.png" class="city__icon"></center>
+            <h1 class="guide__title" style="margin-bottom: 72px;">Giỏ Hàng</h1>
+        </div>
+
+        <div class="row justify-content-center" bis_skin_checked="1">
+            <div class="col-md-8" bis_skin_checked="1">
+                <div class="card" style="box-shadow: unset" bis_skin_checked="1">
+                    <div class="card-body" bis_skin_checked="1">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Images</th>
+                                    <th>Quantity</th>
+                                    <th class="text-right">Price</th>
+                                    <th class="text-right">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Cart.Items)
+                                {
                                     <tr>
-                                        <th>Item</th>
-                                        <th>Details</th>
-                                        <th>Quantity</th>
-                                        <th class="text-right">Price</th>
-                                        <th class="text-right">Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-left">Name</td>
+                                        <td class="text-left">@item.food.Name</td>
                                         <td class="text-center">
-                                            <a class="btn btn-primary">Chi tiết</a>
+                                            <img class="img-thumbnail" src="~/img/@item.food.PhotoPath">
                                         </td>
                                         <td class="text-left">
-                                            <input type="number" value="" onchange=""
+                                            <input type="number" value="@item.Quantity" onchange="updateQuantity(@item.Quantity)"
+                                                   asp-action="UpdateQuantity" asp-controller="Cart" asp-route-id="@item.food.Id"
                                                    id="quantity-input" />
                                         </td>
-                                        <td class="text-right">9,999,999</td>
-                                        <td class="text-right">Quantity</td>
+                                        <td class="text-right">Giá: <b>@string.Format("{0:N0} VND", @item.food.Price)</td>
+                                        <td class="text-right">@((item.food.Price * item.Quantity).ToString("#,# VND"))</td>
                                         <td class="text-center">
                                             <a class="btn btn-danger">Remove</a>
                                         </td>
                                     </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="3" class="text-right">Total:</td>
-                                        <td class="text-right">9,999,999 vnđ</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <a class="btn btn-outline-primary">Clear</a>
-                            <a class="btn btn-outline-primary">Back to shop</a>
-                            <a class="btn btn-outline-primary">Checkout</a>
-                        </div>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-right">Total:</td>
+                                    <td class="text-right">@Model.Cart.ComputeTotalValue().ToString("#,# VND")</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <a class="btn btn-outline-primary" asp-action="Clear" asp-controller="Cart">Clear</a>
+                        <a class="btn btn-outline-primary">Back to shop</a>
+                        <a class="btn btn-outline-primary">Checkout</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </main>
+</div>
+@{
+    int OnChangeQuantity(int id)
+    {
+        var quantity = 1;
+        if (quantity > 0)
+        {
+            // var cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            // cart.SetQuantity(productId, quantity);
+            // HttpContext.Session.SetJson("cart", cart);
+        }
+        return 1;
+    }
+    void UpdateQuantity(int id, int quantity)
+    {
+        if (quantity > 0)
+        {
+            // var cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            // cart.SetQuantity(productId, quantity);
+            // HttpContext.Session.SetJson("cart", cart);
+        }
+    }
 
-            
+}
 
-        </main>
-    </div>
-</body>
-</html>
+@section Scripts
+    {
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var button = document.getElementById('button');
+            button.addEventListener('click', function () {
+                var test = "@OnChangeQuantity(1)";
+                console.log(test);
+            });
+        });
+
+        function updateQuantity(productId) {
+            let input = document.getElementById('quantity-input');
+            let quantity = input.value;
+        @* @UpdateQuantity(productId, quantity); *@
+                        }
+    </script>
+}

@@ -86,7 +86,6 @@ namespace Admin.Controllers
             
             return View("UpdateFood",model);
         }
-        //Đang bị lỗi chỗ này
         [HttpPost]
         public IActionResult UpdateFood(FoodViewModel model)
         {
@@ -112,6 +111,11 @@ namespace Admin.Controllers
                 return RedirectToAction("List");
             }
             return View(model);
+        }
+
+        public IActionResult ListShoppingFood()
+        {
+            return View(foodRepository.GetAll());
         }
         //Hàm xử lý ảnh
         private void ProcessImage(IFormFile image, ref string fileName)

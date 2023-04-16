@@ -34,40 +34,54 @@
 <body>
     <!--Header-->
     <header class="bg-black bg-opacity-50">
-        <nav class="navbar navbar-expand-lg px-lg-5" style="margin-right:auto;">
-            <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="fas fa-bars" style="text-shadow: 2px 2px 2px #000000;color: #fff;"></i></span>
-            </button>
-            <div class="collapse navbar-collapse order-3" id="navbarCollapse" bis_skin_checked="1">
-                <ul class="navbar-nav mr-auto">
-                    <a asp-controller="Main" asp-action="Main" class="nav-link menu-header shine-active"><i class="ficon fa-lg fa fa-home"></i></a>
-                    <!-- Menu -->
-                    <a asp-controller="Food" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Menu</a>
-                    <!--Category-->
-                    <a asp-controller="Category" asp-action="List" class="nav-link menu-header" bis_skin_checked="1">Category</a>
-                    <!-- Cart -->
-                    <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header" bis_skin_checked="1">Cart</a>
-                    <!-- About Us -->
-                    <a asp-controller="AboutUs" asp-action="Index" class="nav-link menu-header" bis_skin_checked="1">About Us</a>
-                </ul>
+        <nav class="navbar navbar-expand-lg p-2">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="text-shadow: 2px 2px 2px #000000;color: #fff;"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarText">
+                        <li class="nav-item">
+                            <a asp-controller="Main" asp-action="Main" class="nav-link menu-header shine-active"><i class="ficon fa-lg fa fa-home"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Menu -->
+                            <a asp-controller="Food" asp-action="List" class="nav-link menu-header">List Food</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--Category-->
+                            <a asp-controller="Category" asp-action="List" class="nav-link menu-header">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- About Us -->
+                            <a asp-controller="AboutUs" asp-action="Index" class="nav-link menu-header">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- List Shopping -->
+                            <a asp-controller="Food" asp-action="ListShoppingFood" class="nav-link menu-header">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Cart -->
+                            <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header">Cart</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg">
-            <div>
+            <form class="form-inline">
                 <button asp-controller="Account" asp-action="Register" class="btn btn-success my-2 my-sm-0" style="margin:5px">
                     Register
                 </button>
                 <button asp-controller="Account" asp-action="Login" class="btn btn-success my-2 my-sm-0" style="margin:5px">
                     Login
                 </button>
-            </div>
-        </nav>
+            </form>
     </header>
     <!--Body-->
     <div class="container">
         @*<main role="main" class="pb-3">*@
-            @RenderBody()
-            @*</main>*@
+        @RenderBody()
+        @*</main>*@
     </div>
     <!--Footer-->
     <footer class="mt-5 p-3" style="background: rgb(27 25 60 / 58%);color: #fff; margin-right: -6px; margin-left: -8px">
