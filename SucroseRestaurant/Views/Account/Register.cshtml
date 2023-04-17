@@ -1,109 +1,37 @@
-﻿
-<body>
-    <div class="wrapper" bis_skin_checked="1">        
-        <!--Main-->
-        <main>
-            <section class="content">
-                <div class="container-fluid" bis_skin_checked="1">
-                    <center><img src="~/img/city.png" class="city__icon"></center>
-                    <h1 class="guide__title" style="margin-bottom: 72px;">Register</h1>
-                    <div class="container" bis_skin_checked="1">
-
-                        <div class="row justify-content-center" bis_skin_checked="1">
-                            <div class="col-md-8" bis_skin_checked="1">
-                                <div class="card" style="box-shadow: unset" bis_skin_checked="1">
-                                    <div class="card-body" bis_skin_checked="1">
-                                        <br>
-                                        <form>
-                                            <input type="hidden" name="_token" value="aTvpOZB8tfgxuqexbWR2TwJZWzvBm0DheqGyHMR3">
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="full_name" class="col-md-4 col-form-label text-md-right">
-                                                    Họ và tên
-                                                </label>
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="full_name" type="text" class="form-control " name="full_name" value="" required="" placeholder="Tên này công khai, người khác có thể thấy" autocomplete="name" autofocus="">
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="login_name" class="col-md-4 col-form-label text-md-right">
-                                                    Tên đăng nhập
-                                                </label>
-
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="login_name" type="text" class="form-control " name="login_name" value="" required="" autocomplete="name" autofocus="" placeholder="Giữ bí mật, không điền giống bên trên">
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="phone" class="col-md-4 col-form-label text-md-right">
-                                                    Số điện thoại
-                                                </label>
-
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="phone" type="text" class="form-control " name="phone" value="" required="" placeholder="Chính xác để lấy lại mật khẩu nếu quên">
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="email" class="col-md-4 col-form-label text-md-right">
-                                                    Địa chỉ email
-                                                </label>
-
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="email" type="email" class="form-control " name="email" value="" required="" placeholder="Chính xác để lấy lại mật khẩu nếu quên" autocomplete="email">
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="password" class="col-md-4 col-form-label text-md-right">
-                                                    Mật khẩu
-                                                </label>
-
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="password" type="password" class="form-control " name="password" required="" placeholder="Điền tối thiểu 8 ký tự" autocomplete="new-password">
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
-                                                    Xác nhận mật khẩu
-                                                </label>
-
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required="" placeholder="Nhập lại mật khẩu giống bên trên" autocomplete="new-password">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6 offset-md-4 mb-3" bis_skin_checked="1">
-                                                <!-- Google reCaptcha -->
-                                                
-                                                <!-- End Google reCaptcha -->
-                                            </div>
-
-                                            <div class="form-group row mb-0" bis_skin_checked="1">
-                                                <div class="col-md-8 offset-md-4" bis_skin_checked="1">
-                                                    <button type="submit" class="btn btn-primary">
-                                                        Đăng ký
-                                                    </button>
-                                                    <a asp-controller="Account" asp-action="Login" class="btn btn-light" bis_skin_checked="1">
-                                                        Đăng nhập
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>              
+﻿<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="bg-dark p-lg-5 align-items-center">
+        <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+            <h5 class="section-title ff-secondary text-start text-warning fw-normal">Register</h5>
+            <h1 class="text-white mb-4">Register to your account</h1>
+            <form>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="name" placeholder="User name">
+                        <label for="name">User Name</label>
+                    </div>
                 </div>
-            </section>
-        </main>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <label for="email">Your Email</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <label for="email">Your Password</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="rppassword" placeholder="Repeat Password">
+                        <label for="rppassword">Repeat Your Password</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-success w-100 py-3" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
     </div>
-</body>
-</html>
+</div>

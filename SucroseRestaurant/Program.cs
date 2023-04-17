@@ -12,9 +12,6 @@ builder.Services.AddDbContext<AppDbContext>(optionsAction =>
     );
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
-//Using for cart
-builder.Services.AddMemoryCache();
-builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -30,8 +27,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-//Add using session
-app.UseSession();
 
 app.UseAuthorization();
 

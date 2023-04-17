@@ -1,69 +1,31 @@
 ﻿
-
-<body>
-    <div class="wrapper" bis_skin_checked="1">       
-        <!--Main-->
-        <main>
-            <section class="content">
-                <div class="container-fluid" bis_skin_checked="1">
-                    <center><img src="~/img/city.png" class="city__icon"></center>
-                    <h1 class="guide__title" style="margin-bottom: 72px;">Login</h1>
-                    <div class="container" bis_skin_checked="1">
-
-                        <div class="row justify-content-center" bis_skin_checked="1">
-                            <div class="col-md-8" bis_skin_checked="1">
-                                <div class="card" style="box-shadow: unset" bis_skin_checked="1">
-                                    <div class="card-body" bis_skin_checked="1">
-                                        <br>
-                                        <form>
-                                            <input type="hidden" name="_token" value="aTvpOZB8tfgxuqexbWR2TwJZWzvBm0DheqGyHMR3">
-                                            <!--Username-->
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="login_name" class="col-md-4 col-form-label text-md-right">
-                                                    Tên đăng nhập
-                                                </label>
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="login_name" type="text" class="concave form-control " name="login_name" value="" required="" autocomplete="login_name" autofocus="">
-                                                </div>
-                                            </div>
-                                            <!--Password-->
-                                            <div class="form-group row" bis_skin_checked="1">
-                                                <label for="password" class="col-md-4 col-form-label text-md-right">
-                                                    Mật khẩu
-                                                </label>
-                                                <div class="col-md-6" bis_skin_checked="1">
-                                                    <input id="password" type="password" class="concave form-control " name="password" required="" autocomplete="current-password">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-6 offset-md-4 mb-3" bis_skin_checked="1">
-                                                <!-- Google reCaptcha -->
-                                                
-                                                <!-- End Google reCaptcha -->
-                                            </div>
-                                            <div class="form-group row mb-0" bis_skin_checked="1">
-                                                <div class="col-md-8 offset-md-4" bis_skin_checked="1">
-                                                    <button type="submit" class="btn btn-primary">
-                                                        Đăng nhập
-                                                    </button>
-                                                    <a asp-controller="Account" asp-action="Register" class="btn btn-light" bis_skin_checked="1">
-                                                        Đăng ký
-                                                    </a>
-                                                    <a asp-controller="Account" asp-action="Forgot" bis_skin_checked="1">
-                                                        Quên mật khẩu? Lấy lại
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="bg-dark p-lg-5 align-items-center">
+        <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+            <h5 class="section-title ff-secondary text-start text-warning fw-normal">Login</h5>
+            <h1 class="text-white mb-4">Login to your account</h1>
+            <form>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="name" placeholder="User name">
+                        <label for="name">User Name</label>
                     </div>
                 </div>
-            </section>
-        </main>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="password" placeholder="Password">
+                        <label for="email">Your Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-info w-100 py-3" type="submit">Login</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-danger w-100 py-3" type="submit">Forgot</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</body>
-</html>
+</div>

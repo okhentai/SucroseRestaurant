@@ -1,108 +1,77 @@
-﻿<div class="container bg-black bg-opacity-50 p-lg-5 my-5">
-    <!-- Welcome -->
-    <div class="wrapper" bis_skin_checked="1">
-        <main>
-            <div class="container" bis_skin_checked="1">
-                <center>
-                    <img src="~/img/city.png" class="city__icon">
-                </center>
-                <h1 class="guide__title" style="margin-bottom: 72px;">Welcome to Sucrose Restaurant</h1>
+﻿<div class="container-xxl py-5 bg-dark bg-opacity-50 hero-header mb-5">
+    <div class="container my-5 py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
+                <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <a asp-controller="Booking" asp-action="Index" class="btn btn-warning py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
             </div>
-
-
-            <div>
-                <div class="row" style="color:aliceblue">
-                    <div class="col-lg-6 aboutleft">
-                        <h3 class="about-headagile text-capitalize mt-2 mb-4 text-right">Vị ngon trên từng món ăn</h3>
-                        <p class="my-3">
-                            Nhà hàng Sucrose với châm ngôn "không ngon không lấy tiền" hứa hẹn sẽ mang đến cho quý khách những món ăn ngon và trải nghiệm tuyệt vời ở nhà hàng. Những món ăn được làm bởi các đầu bếp nổi tiếng hàng đầu DH20LT: KhoiBoss, SonDaika, KhangSus, ... sẽ không làm quý khách thất vọng.
-                        </p>
-                        <p>
-                            Nhà hàng Sucrose đã tiếp đón nhiều khách quý đến như: TMA, TienCho, ... và được đánh giá rất cao. Còn bạn thì sao ? Hãy đến và trải nghiệm tại Sucrose Restaurant!
-                        </p>
-                        <a asp-controller="Food" asp-action="List" class="okehe">Let's go! &#8594;</a>
-                    </div>
-                    <div class="col-lg-6 aboutright">
-                        <div class="large-12 columns">
-                            <!-- Owl-Carousel -->
-                            <div id="owl-demo" class="owl-carousel owl-theme text-center agileinfo-gallery-row">
-                                <a class="item g1">
-                                    <img class="lazyOwl img-fluid" src="/img/w1.png" title="Ice Cream" alt="" />
-                                </a>
-                                <a class="item g1">
-                                    <img class="lazyOwl img-fluid" src="/img/w2.png" title="Ice Cream" alt="" />
-                                </a>
-                                <a class="item g1">
-                                    <img class="lazyOwl img-fluid" src="/img/w3.png" title="Ice Cream" alt="" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-    <!-- about bottom -->
-    <div class="video-w3l text-center py-5 p-lg-3 my-5">
-        <div class="container py-xl-5 py-lg-3">
-            <h3 class="text-white">Không chỉ là món ăn, mà đó là Sucrose</h3>
-            <p class="font-italic p-3 text-light">Death is like the wind, always by my side</p>
-            <a class="okehe" asp-controller="AboutUs" asp-action="Index" role="button">Read More</a>
-        </div>
-    </div>
-    <!-- //about bottom -->
-    <!-- Đánh giá -->
-
-    <div class="testimonial">
-        <div class="title-heading text-center mb-sm-5 mb-4">
-            <h3 class="title text-capitalize text-white">what our people say's</h3>
-        </div>
-        <div class="ok1">
-            <div class="ok2" style="color:aliceblue">
-                <div class="col-3 bg-light p-lg-3">
-                    <i class="fa fa-quote-left"></i>
-                    <p>Đồ ăn ngon, wifi mạnh, chơi LOL không bị lag</p>
-                    <div class="rating" style="color:yellow">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <img src="~/img/tma.jpg">
-                    <h3>Nguyễn Hoàng Tâm</h3>
-                </div>
-                <div class="col-3 bg-light p-lg-3">
-                    <i class="fa fa-quote-left"></i>
-                    <p>Sucrose làm tôi nhớ đến người ấy!</p>
-                    <div class="rating" style="color:yellow">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <img src="~/img/khoi.jpg">
-                    <h3>Tạ Quang Khôi</h3>
-                </div>
-                <div class="col-3 bg-light p-lg-3">
-                    <i class="fa fa-quote-left"></i>
-                    <p>
-                        Không chỉ là dánh giá, mà còn là Sucrose
-                    </p>
-                    <div class="rating" style="color:yellow">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <img src="~/img/khang.jpg">
-                    <h3>Trương An Khang</h3>
-                </div>
+            <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                <img class="img-fluid" src="~/img/hero.png" alt="">
             </div>
         </div>
     </div>
-
-
 </div>
+<!-- Team Start -->
+<div class="container-xxl pt-5 pb-3">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
+            <h1 class="mb-5">Our Manager</h1>
+        </div>
+        <div class="row g-2">
+            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item text-center rounded overflow-hidden">
+                    <div class="rounded-circle overflow-hidden m-4">
+                        <img class="img-fluid" src="~/img/row.jpg" alt="">
+                    </div>
+                    <h5 class="mb-0">Bùi Ngọc Tâm</h5>
+                    <small>Quản lý</small>
+                    <div class="d-flex justify-content-center mt-3">
+                        <a class="btn btn-square btn-primary mx-1"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary mx-1"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary mx-1"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item text-center rounded overflow-hidden">
+                    <div class="rounded-circle overflow-hidden m-4">
+                        <img class="img-fluid" src="~/img/khang2.jpg" alt="">
+                    </div>
+                    <h5 class="mb-0">Trương An Khang</h5>
+                    <small>Quản lý</small>
+                    <div class="d-flex justify-content-center mt-3">
+                        <a class="btn btn-square btn-primary mx-1"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary mx-1"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary mx-1"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+<!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
+            <h1 class="mb-5">Our Clients Say!!!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item bg-transparent border rounded p-4">
+                <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="~/img/khoi.jpg" style="width: 50px; height: 50px;">
+                    <div class="ps-3">
+                        <h5 class="mb-1">Client Name</h5>
+                        <small>Profession</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
