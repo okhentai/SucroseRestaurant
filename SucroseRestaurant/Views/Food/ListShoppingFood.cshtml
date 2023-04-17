@@ -1,78 +1,48 @@
 ﻿@model IEnumerable<Admin.Models.Foods.Food>
 
 
-<div class="wrapper" bis_skin_checked="1">
-    <!--Main-->
-    <main>
-        <section class="content">
-            <div class="container-fluid" bis_skin_checked="1">
-                <center><img src="~/img/city.png" class="city__icon"></center>
-                <h1 class="guide__title" style="margin-bottom: 72px;">MENU</h1>
-                <div class="container" bis_skin_checked="1">
-
-                    <div class="row justify-content-center" bis_skin_checked="1">
-                        <div class="col" bis_skin_checked="1">
-                            <div class="card" style="box-shadow: unset" bis_skin_checked="1">
-                                <div class="card-body" bis_skin_checked="1">
-                                    <div class="row">
-                                        @foreach (var food in @Model)
-                                        {
-
-                                            <div class="col-lg-3 my-lg-1 p-4">
-                                                <div class="product-grid">
-                                                    <div class="product-image">
-                                                        <a class="image">
-                                                            <img class="pic-1" src="~/img/@food.PhotoPath">
-                                                            <img class="pic-2" src="~/img/@food.PhotoPath">
-                                                        </a>
-                                                        <ul class="product-links">
-                                                            <li><a type="button" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@food.Id"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a type="button" data-toggle="modal" data-target="#food-modal-@food.Id"><i class="fa fa-info-circle"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><p class="text-black">@food.Name</p></h3>
-                                                        <div class="price"><b>@string.Format("{0:N0} VND", @food.Price)</b></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal fade" id="food-modal-@food.Id" tabindex="-1" role="dialog" aria-labelledby="product-modal-@food.Id-label" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                                                    <div class="modal-content bg-default light">
-                                                        <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                        <div class="modal-body">
-                                                            <div class="container-fluid">
-                                                                <div class="row align-items-center no-gutters">
-                                                                    <div class="col-md-5">
-                                                                        <img class="mw-100" alt="img" src="~/img/@food.PhotoPath">
-                                                                    </div>
-                                                                    <div class="col-md-7 padding-x3 text-black">
-                                                                        <h3 class="mb-50"><strong>@food.Name</strong></h3>
-                                                                        <p class="mb-50 text-secondary">Mô tả: @food.Description</p>
-                                                                        <p class="mb-50">Giá: <b>@string.Format("{0:N0} VND", food.Price)</b></p>
-                                                                        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@food.Id" class="btn btn-outline-danger">Add to cart</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="bg-wrap">
-                                                            <div class="bg"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        }
-                                    </div>
-                                </div>
-                            </div>
+<!-- Menu Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+            <h1 class="mb-5">Most Popular Items</h1>
+        </div>
+        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+            <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                <li class="nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill">
+                        <i class="fa fa-coffee fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Popular</small>
+                            <h6 class="mt-n1 mb-0">Breakfast</h6>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill">
+                        <i class="fa fa-hamburger fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Special</small>
+                            <h6 class="mt-n1 mb-0">Launch</h6>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill">
+                        <i class="fa fa-utensils fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Lovely</small>
+                            <h6 class="mt-n1 mb-0">Dinner</h6>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <section class="tab-content">
+
+            </section>
+        </div>
+    </div>
 </div>
+<!-- Menu End -->
 

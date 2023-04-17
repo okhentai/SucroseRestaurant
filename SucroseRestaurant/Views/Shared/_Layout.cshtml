@@ -5,254 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="~/css/all.min.css">
-    <link rel="icon" type="image/png" href="~/img/icon.png">
-    <!-- Theme style -->
-    @*<link rel="stylesheet" href="~/css/adminlte.min.css">*@
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <!-- Liên kết file CSS -->
-    <link rel="stylesheet" href="~/css/thietke.css" asp-append-version="true">
-    <!-- Liên kết với font awsome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-
-    <!-- Bootstrap-Core-CSS -->
-    <link href="~/css/pogo-slider.min.css">
-
-    <!-- Banner-Slider-CSS -->
-    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
-    <!-- owl carousel css (for welcome section) -->
-    <link rel="stylesheet" href="~/css/flexslider.css">
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+    <!-- Liên kết Bootsrap -->
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!--Header-->
-    <header class="bg-black bg-opacity-50">
-        <nav class="navbar navbar-expand-lg p-2">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="text-shadow: 2px 2px 2px #000000;color: #fff;"></i></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarText">
-                        <li class="nav-item">
-                            <a asp-controller="Main" asp-action="Main" class="nav-link menu-header shine-active"><i class="ficon fa-lg fa fa-home"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Menu -->
-                            <a asp-controller="Food" asp-action="List" class="nav-link menu-header">List Food</a>
-                        </li>
-                        <li class="nav-item">
-                            <!--Category-->
-                            <a asp-controller="Category" asp-action="List" class="nav-link menu-header">Category</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- About Us -->
-                            <a asp-controller="AboutUs" asp-action="Index" class="nav-link menu-header">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- List Shopping -->
-                            <a asp-controller="Food" asp-action="ListShoppingFood" class="nav-link menu-header">Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Cart -->
-                            <a asp-controller="Cart" asp-action="Cart" class="nav-link menu-header">Cart</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-            <form class="form-inline">
-                <button asp-controller="Account" asp-action="Register" class="btn btn-success my-2 my-sm-0" style="margin:5px">
-                    Register
-                </button>
-                <button asp-controller="Account" asp-action="Login" class="btn btn-success my-2 my-sm-0" style="margin:5px">
-                    Login
-                </button>
-            </form>
-    </header>
-    <!--Body-->
-    <div class="container">
-        @*<main role="main" class="pb-3">*@
-        @RenderBody()
-        @*</main>*@
-    </div>
-    <!--Footer-->
-    <footer class="mt-5 p-3" style="background: rgb(27 25 60 / 58%);color: #fff; margin-right: -6px; margin-left: -8px">
-        <div class="container-lg" bis_skin_checked="1">
-            <h2 class="guide__title mt-3">
-                <a href="#">
-                    <img src="#" style="margin-top: -8px;height: 45px">
-                </a>
-            </h2>
-            <div class="row" bis_skin_checked="1">
-                <section class="col-12 col-lg-4">
-                    <div class="h h4 link-active" bis_skin_checked="1">
-                        <a>Nhà hàng Sucrose</a>
-                    </div>
-                    <p>
-                        <span style="color: rgb(255, 255, 255); font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;" class="success">
-                            <p class="m-0">Đây là bài báo cáo cuối kỳ web 2 của nhóm Sucrose</p>
-                            <p class="m-0">Không có tính thương mại</p>
-                            <p class="m-0">Dùng cho mục đích học tập ^^!</p>
-                        </span>
-                        <br>
-                    </p>
-                    <p class="mt-3 small">©DH20LT - Bản quyền thuộc về Sucrose Team</p>
-                    <div class="h h5" bis_skin_checked="1">
-                        <i class="fa fa-language"></i> Ngôn ngữ
-                    </div>
-                    <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">English</a>
-                    <a class="btn btn-sm  btn-info " href="#" bis_skin_checked="1">Mặc định</a>
-                </section>
-                <section class="col-12 col-lg-4">
-                    <div class="h h4 link-active" bis_skin_checked="1">Thành viên của nhóm</div>
-                    <p class="m-0">Trương An Khang</p>
-                    <p class="m-0">Bùi Ngọc Tâm</p>
-                </section>
-                <section class="col-12 col-lg-4">
-                    <a class="fab fa-facebook-square fa-2x mr-2" href="https://www.facebook.com/sansy.tak"></a>
-                    <a class="fab fa-youtube fa-2x"></a>
-                    <p class="mt-3 fw-bold"><i class="fa fa-phone mr-2"></i>Phone: 0123456789 (8h-22h)</p>
-                    <p class="fw-bold"><i class="fa fa-clock mr-2"></i>Thời gian làm việc: 8h - 24h</p>
-                    <p class="fw-bold"><i class="fa fa-map-marked-alt mr-2"></i>Địa chỉ: 02 Trương Văn Bang, Tp Vũng Tàu - tỉnh Bà Rịa Vũng Tàu</p><p class="m-0"></p>
-                </section>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-    </footer>
+        <!-- Spinner End -->
+        <!--Header-->
+        <header class="bg-black bg-opacity-50">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="text-warning m-0"><i class="fa fa-utensils me-3"></i>Succrose</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a asp-controller="Main" asp-action="Main" class="nav-item nav-link active">Home</a>
+                        <a asp-action="ListShoppingFood" asp-controller="Food" class="nav-item nav-link">Menu</a>
+                        <a asp-action="Index" asp-controller="AboutUs" class="nav-item nav-link">About Us</a>
+                        <a asp-action="Cart" asp-controller="Cart" class="nav-item nav-link">Cart</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admin</a>
+                            <div class="dropdown-menu m-0">
+                                <a asp-action="List" asp-controller="Category" class="dropdown-item">Category details</a>
+                                <a asp-action="List" asp-controller="Food" class="dropdown-item">Food details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="form-inline">
+                        <button asp-controller="Account" asp-action="Register" class="btn btn-outline-warning my-2 my-sm-0" style="margin:5px">
+                            Register
+                        </button>
+                        <button asp-controller="Account" asp-action="Login" class="btn btn-out my-2 my-sm-0" style="margin:5px">
+                            Login
+                        </button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <!--Body-->
+        <div class="container">
+            @*<main role="main" class="pb-3">*@
+            @RenderBody()
+            @*</main>*@
+        </div>
+        <!-- Footer Start -->
+        <footer class="container-fluid bg-dark text-warning footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-warning fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Reservation</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-warning fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-warning fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 09PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 08PM</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-warning fw-normal mb-4">Newsletter</h4>
+                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="footer-logo-text-3" class="text-center dark py-3 mb-auto">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="mb-0">Copyright © 2023 <a target="_self"><span style="color:#FFDB58" class="">Succrose Restaurant</span></a>. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-wrap">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+    </div>
 
-
-    <!--Add-->
-    <script src="~/js/jquery.js"></script>
-    <script src="~/js/bootstrap.js"></script>
-
-    <!-- JavaScript -->
-    <script src="~/js/jquery-2.2.3.min.js"></script>
-    <!-- Default-JavaScript-File -->
-    <!-- Owl-Carousel-JavaScript (for welcome section) -->
-    <script src="~/js/owl.carousel.js"></script>
-    <script>
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-            items: 1,
-            loop: true,
-            margin: 10,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            autoplayHoverPause: true,
-        });
-    </script>
-    <!-- //Owl-Carousel-JavaScript (for welcome section) -->
-    <!-- flexisel slider (for middle Slider) -->
-    <script src="js/jquery.flexisel.js"></script>
-    <script>
-        $(window).load(function () {
-            $("#flexiselDemo1").flexisel({
-                visibleItems: 5,
-                animationSpeed: 1000,
-                autoPlay: true,
-                autoPlaySpeed: 3000,
-                pauseOnHover: true,
-                enableResponsiveBreakpoints: true,
-                responsiveBreakpoints: {
-                    portrait: {
-                        changePoint: 440,
-                        visibleItems: 1
-                    },
-                    landscape: {
-                        changePoint: 667,
-                        visibleItems: 3
-                    },
-                    tablet: {
-                        changePoint: 900,
-                        visibleItems: 4
-                    }
-                }
-            });
-
-        });
-    </script>
-    <!-- //flexisel slider (for middle Slider) -->
-    <!-- flexSlider (for testimonials) -->
-    <script defer src="js/jquery.flexslider.js"></script>
-    <script>
-        $(window).load(function () {
-            $('.flexslider').flexslider({
-                animation: "slide",
-                start: function (slider) {
-                    $('body').removeClass('loading');
-                }
-            });
-        });
-    </script>
-    <!-- //flexSlider (for testimonials) -->
-    <!-- stats -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.countup.js"></script>
-    <script>
-        $('.counter').countUp();
-    </script>
-    <!-- //stats -->
-    <!-- smooth scrolling -->
-    <script src="js/SmoothScroll.min.js"></script>
-    <!-- //smooth scrolling -->
-    <!-- start-smoth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script>
-    <!-- start-smoth-scrolling -->
-    <!-- smooth scrolling-bottom-to-top -->
-    <script>
-        $(document).ready(function () {
-            /*
-                var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear'
-                };
-            */
-            $().UItoTop({
-                easingType: 'easeOutQuart'
-            });
-        });
-    </script>
-    <!-- //smooth scrolling-bottom-to-top -->
-    <!-- Pogo slider (for banner) -->
-    <script src="~/js/jquery.pogo-slider.min.js"></script>
-    <script src="~/js/main.js"></script>
-    <!-- Pogo slider (for banner) -->
-
-    <script src="~/js/ok.js"></script>
-    <!-- Necessary-JavaScript-File-For-Bootstrap -->
-
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.esm.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-
-
-    <!--Default-->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!--JS libraries-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/wow/wow.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/counterup/counterup.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="~/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="~/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="~/js/site.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
