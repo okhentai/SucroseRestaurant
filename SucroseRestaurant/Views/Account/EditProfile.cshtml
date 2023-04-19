@@ -1,0 +1,37 @@
+﻿@model Admin.Models.ViewModel.EditProfileViewModel
+
+
+<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="bg-dark p-lg-5 align-items-center">
+        <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+            <h5 class="section-title ff-secondary text-start text-warning fw-normal">Cập nhật</h5>
+            <h1 class="text-white mb-4">Cập nhật thông tin</h1>
+            <form asp-action="EditProfile" method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input asp-for="FullName" class="form-control" id="FullName" placeholder="FullName"><span asp-validation-for="FullName" class="text-danger"></span>
+                        <label asp-for="FullName" for="FullName">Your Full Name</label>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input asp-for="PhoneNumber" class="form-control" id="PhoneNumber" placeholder="PhoneNumber"><span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        <label asp-for="PhoneNumber" for="PhoneNumber">Your Phone number</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input asp-for="Email" class="form-control" id="email" placeholder="Email"><span asp-validation-for="Email" class="text-danger"></span>
+                        <label asp-for="Email" for="email">Your Email</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-success w-25 mx-auto" type="submit">Save</button>
+                    <a asp-action="Profile" asp-controller="Account" class="btn mx-auto w-25 btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

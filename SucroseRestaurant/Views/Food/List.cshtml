@@ -1,45 +1,66 @@
 ﻿@model IEnumerable<Admin.Models.Foods.Food>
 
 
-<body>
-    <div class="wrapper" bis_skin_checked="1">
-        <!--Main-->
-        <main>
-            <section class="content">
-                <div class="container-fluid" bis_skin_checked="1">
-                    <div class="container" bis_skin_checked="1">
-                        <div class="row justify-content-center" bis_skin_checked="1">
-                            <div class="col-md-8" bis_skin_checked="1">
-                                <div class="card" style="box-shadow: unset" bis_skin_checked="1">
-                                    <div class="card-body" bis_skin_checked="1">
-                                        <br>
-                                        <button type="button" class="btn btn-warning">
-                                            <a asp-action="AddFood" class="text-decoration-none text-white">Create</a>
-                                        </button>
+<div class="wrapper" bis_skin_checked="1">
+    <!--Main-->
+    <main>
+        <section class="content">
+            <div class="container-fluid" bis_skin_checked="1">
+                <div class="container" bis_skin_checked="1">
+                    <div class="row justify-content-center" bis_skin_checked="1">
+                        <div class="col-md-8" bis_skin_checked="1">
+                            <div class="card" style="box-shadow: unset" bis_skin_checked="1">
+                                <div class="card-body" bis_skin_checked="1">
+                                    <br>
+                                    <h1 class="guide__title" style="margin-bottom: 72px;">Danh sách món ăn</h1>
+                                    <button type="button" class="btn btn-warning">
+                                        <a asp-action="AddFood" class="text-decoration-none text-white">Create</a>
+                                    </button>
 
-                                        <div class="row">
-                                            @foreach (var food in @Model)
-                                            {
-                                                <div class="col-lg-4 my-2">
-                                                    <div class="card zoom detailsShow" style="width: 15rem;">
-                                                        <img class="card-img-top" src="~/img/@food.PhotoPath" style="height: 10rem" />
-                                                        <div class="card-body" style="background-color:#fefee3">
-                                                            <h5 class="card-title" style="color:#D68C45">Tên: @food.Name</h5>
-                                                            <p class="card-text" style="color:#D68C45">Giá: <b>@string.Format("{0:N0} VND", @food.Price)</b></p>
-                                                            <a asp-action="UpdateFood" asp-route-id="@food.Id" class="btn btn-success" id="tag-a-open-update">Update</a>
-                                                            <a asp-action="DeleteFood" asp-route-id="@food.Id" class="btn btn-danger" id="tag-a-delete">Delete</a>
-                                                        </div>
+                                    <div class="row">
+                                        @foreach (var food in @Model)
+                                        {
+                                            <div class="col-lg-4 my-2">
+                                                <div class="card zoom detailsShow" style="width: 15rem;">
+                                                    <img class="card-img-top" src="~/img/@food.PhotoPath" style="height: 10rem" />
+                                                    <div class="card-body" style="background-color:#fefee3">
+                                                        <h5 class="card-title" style="color:#D68C45">Tên: @food.Name</h5>
+                                                        <p class="card-text" style="color:#D68C45">Giá: <b>@string.Format("{0:N0} VND", @food.Price)</b></p>
+                                                        <a asp-action="UpdateFood" asp-route-id="@food.Id" class="btn btn-success" id="tag-a-open-update">Update</a>
+                                                        <a onclick="postId(@food.Id)" class="btn btn-danger" id="tag-a-delete" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a>
                                                     </div>
                                                 </div>
-                                            }
+                                            </div>
+                                            <!-- Modal -->
+                                           
+                                        }
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Bạn có muốn xóa?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                                        <button id="del" type="button" class="btn btn-primary">Yes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
-</body>
+            </div>
+        </section>
+    </main>
+</div>
+
+

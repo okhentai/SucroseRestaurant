@@ -1,4 +1,11 @@
-﻿<!-- Reservation Start -->
+﻿@using Admin.Models.Users
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Admin.Models.Bookings.Booking
+@inject SignInManager<User> SignInManager
+
+
+<!-- Reservation Start -->
 <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
     <div class="row g-0">
         <div class="col-md-6">
@@ -10,42 +17,56 @@
         </div>
         <div class="col-md-6 bg-dark d-flex align-items-center">
             <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservation</h5>
-                <h1 class="text-white mb-4">Book A Table Online</h1>
-                <form>
+                <h5 class="section-title ff-secondary text-start text-warning fw-normal">Đặt bàn</h5>
+                <h1 class="text-white mb-4">Đặt bàn online</h1>
+                <form asp-action="Index" enctype="multipart/form-data" method="post">
                     <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                <label for="name">Your Name</label>
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        @if(!SignInManager.IsSignedIn(User))
+                        {
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Tên của bạn">
+                                    <label asp-for="Name" for="name">Tên của bạn</label>
+                                </div>
                             </div>
-                        </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Name" readonly type="text" class="form-control" id="name">
+                                    <label asp-for="Name" for="name">Tên của bạn</label>
+                                </div>
+                            </div>
+                        }
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                <label for="email">Your Email</label>
+                                <input asp-for="Phone" type="text" class="form-control" id="phoneNumber" placeholder="Số điện thoại">
+                                <label asp-for="Phone" for="phoneNumber">Số điện thoại</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating date" id="date3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                <label for="datetime">Date & Time</label>
+                                <input asp-for="Date" type="datetime" class="form-control" id="datetime" placeholder="Ngày vào" data-target="#date3" data-toggle="datetimepicker" style="inset: 0px !important;" />
+                                <label asp-for="Date" for="datetime">Ngày vào</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <select class="form-select" id="select1">
-                                    <option value="1">People 1</option>
-                                    <option value="2">People 2</option>
-                                    <option value="3">People 3</option>
+                                <select asp-for="People" class="form-select" id="select1">
+                                    <option value="1">1 người</option>
+                                    <option value="2">2 người</option>
+                                    <option value="3">3 người</option>
+                                    <option value="4">4 người</option>
                                 </select>
-                                <label for="select1">No Of People</label>
+                                <label asp-for="People" for="select1">Số người</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                <label for="message">Special Request</label>
+                                <textarea asp-for="Message" class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                <label asp-for="Message" for="message">Special Request</label>
                             </div>
                         </div>
                         <div class="col-12">

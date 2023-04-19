@@ -477,3 +477,6 @@
         padding-right: 0;
         border-right: none;
     }
+.bootstrap-datetimepicker-widget{
+    inset:unset!important;
+}

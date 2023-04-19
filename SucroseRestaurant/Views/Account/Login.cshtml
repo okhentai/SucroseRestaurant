@@ -1,28 +1,31 @@
-﻿
-<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+﻿@model Admin.Models.ViewModel.LoginViewModel
+
+
+<div class="container py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
     <div class="bg-dark p-lg-5 align-items-center">
         <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-            <h5 class="section-title ff-secondary text-start text-warning fw-normal">Login</h5>
-            <h1 class="text-white mb-4">Login to your account</h1>
-            <form>
+            <h5 class="section-title ff-secondary text-start text-warning fw-normal">Đăng nhập</h5>
+            <h1 class="text-white mb-4">Đăng nhập tài khoản của ban</h1>
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
                 <div class="mb-3">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="name" placeholder="User name">
-                        <label for="name">User Name</label>
+                        <input asp-for="UserName" type="text" class="form-control" id="name" placeholder="Tên đăng nhập">
+                        <label asp-for="UserName" for="name">Tên đăng nhập</label>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="password" placeholder="Password">
-                        <label for="email">Your Email</label>
+                        <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                        <label asp-for="Password" for="password">Mật khẩu</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <button class="btn btn-info w-100 py-3" type="submit">Login</button>
+                        <button class="btn btn-info w-100 py-3" type="submit">Đăng nhập</button>
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-danger w-100 py-3" type="submit">Forgot</button>
+                        <button asp-action="Forgot" class="btn btn-danger w-100 py-3">Quên mật khẩu</button>
                     </div>
                 </div>
             </form>

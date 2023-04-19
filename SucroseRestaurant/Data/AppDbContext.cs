@@ -1,15 +1,16 @@
-﻿using Admin.Models.Categories;
+﻿using Admin.Models.Bookings;
+using Admin.Models.Categories;
 using Admin.Models.Foods;
+using Admin.Models.Users;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
 namespace Admin.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Food> Foods { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
@@ -20,9 +21,17 @@ namespace Admin.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //use this to configure the model
+            base.OnModelCreating(modelBuilder);
+            //Make add Migration work
+            modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(x => new { x.UserId });
+            modelBuilder.Entity<IdentityUserRole<string>>().HasKey(x => new { x.RoleId, x.UserId });
+            modelBuilder.Entity<IdentityUserToken<string>>().HasKey(x => new { x.UserId, x.Value });
 
         }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Food> Foods { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
     }
     public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {

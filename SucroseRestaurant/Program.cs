@@ -1,6 +1,9 @@
 ﻿using Admin.Data;
+using Admin.Models.Bookings;
 using Admin.Models.Categories;
 using Admin.Models.Foods;
+using Admin.Models.Users;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +15,12 @@ builder.Services.AddDbContext<AppDbContext>(optionsAction =>
     );
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
+
+builder.Services.AddScoped<IBookingRep, BookingRep>();
+// Using Identity
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>();
+
 
 var app = builder.Build();
 
@@ -29,6 +38,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication(); // Using with Identity
 
 app.MapControllerRoute(
     name: "default",

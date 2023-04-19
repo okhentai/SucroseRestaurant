@@ -1,0 +1,77 @@
+﻿@model Admin.Models.ViewModel.FoodCategoryViewModel
+
+
+<!-- Menu Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+            <h1 class="mb-5">Most Popular Items</h1>
+        </div>
+        <div class="position-relative mx-auto mb-lg-5 mb-sm-5">
+            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+        </div>
+        <div class="tab-class text-center wow fadeInUp mt-2" data-wow-delay="0.1s">
+            <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5 row">
+                <li class="nav-item col-lg-4">
+                    <a href="@Url.Action("Menu", "Food")" class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill">
+                        <i class="fa fa-utensils fa-2x text-warning"></i>
+                        <div class="ps-3">
+                            <h6 class="mb-0">Tất cả</h6>
+                        </div>
+                    </a>
+                </li>
+                @foreach(var category in Model.Categories)
+                {
+                    <li class="nav-item col-lg-4">
+                        <a href="@Url.Action("Menu", "Food", new { categoryId = category.Id })" class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill">
+                            <i class="fa fa-utensils fa-2x text-warning"></i>
+                            <div class="ps-3">
+                                <h6 class=" mb-0">@category.Name</h6>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+            <section class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        @foreach (var item in Model.Foods)
+                        {
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-light p-" type="button" data-bs-toggle="modal" data-bs-target="#food-modal-@item.Id">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="~/img/@item.PhotoPath" style="width: 80px;">
+                                    </button>
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>@item.Name</span>
+                                            <span class="text-warning"><b>@string.Format("{0:N0} VND", item.Price)</b></span>
+                                        </h5>
+                                        <small class="fst-italic">@item.Description</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="food-modal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="product-modal-@item.Id-label" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">@item.Name</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img class="img-fluid" src="~/img/@item.PhotoPath">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- Menu End -->

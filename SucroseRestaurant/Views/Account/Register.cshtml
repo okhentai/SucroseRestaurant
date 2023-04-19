@@ -1,31 +1,47 @@
-﻿<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+﻿@model Admin.Models.ViewModel.RegisterViewModel
+
+<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
     <div class="bg-dark p-lg-5 align-items-center">
         <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-            <h5 class="section-title ff-secondary text-start text-warning fw-normal">Register</h5>
-            <h1 class="text-white mb-4">Register to your account</h1>
-            <form>
+            <h5 class="section-title ff-secondary text-start text-warning fw-normal">Đăng ký</h5>
+            <h1 class="text-white mb-4">Đăng ký tài khoản của bạn</h1>
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
                 <div class="mb-3">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="name" placeholder="User name">
-                        <label for="name">User Name</label>
+                        <input asp-for="UserName" class="form-control" id="UserName" placeholder="Tên đăng nhập"><span asp-validation-for="UserName" class="text-danger"></span>
+                        <label asp-for="UserName" for="UserName">Tên đăng nhập</label>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="Email">
-                        <label for="email">Your Email</label>
+                        <input asp-for="FullName" class="form-control" id="FullName" placeholder="Tên của bạn"><span asp-validation-for="FullName" class="text-danger"></span>
+                        <label asp-for="FullName" for="FullName">Tên của bạn</label>
+                    </div>
+                     
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input asp-for="PhoneNumber" class="form-control" id="PhoneNumber" placeholder="Số điện thoại"><span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        <label asp-for="PhoneNumber" for="PhoneNumber">Số điện thoại</label>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                        <label for="email">Your Password</label>
+                        <input asp-for="Email" class="form-control" id="email" placeholder="Email"><span asp-validation-for="Email" class="text-danger"></span>
+                        <label asp-for="Email" for="email">Email</label>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="rppassword" placeholder="Repeat Password">
-                        <label for="rppassword">Repeat Your Password</label>
+                        <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Mật khẩu"><span asp-validation-for="Password" class="text-danger"></span>
+                        <label asp-for="Password" for="password">Mật khẩu</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input asp-for="ConfirmPassword" type="password" class="form-control" id="rppassword" placeholder="Xác nhận mật khẩu"><span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        <label asp-for="ConfirmPassword" for="rppassword">Xác nhận mật khẩu</label>
                     </div>
                 </div>
                 <div class="col-12">

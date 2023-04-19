@@ -25,6 +25,19 @@ namespace Admin.Controllers
             return View(foodRepository.GetAll());
         }
 
+        public IActionResult Menu(int categoryId)
+        {
+            var food = foodRepository.GetFoodByCategory(categoryId);
+            var category = categoryRepository.GetCategories();
+            FoodCategoryViewModel model = new FoodCategoryViewModel
+            {
+                Foods = food,
+                Categories = category,
+                CurrentCategoryId = categoryId
+            };
+           
+            return View(model);
+        }
         public IActionResult DetailsFood(int id)
         {
             Food food = foodRepository.GetFood(id);
