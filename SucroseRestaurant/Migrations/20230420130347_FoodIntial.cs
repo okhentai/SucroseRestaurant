@@ -61,7 +61,7 @@ namespace Admin.Migrations
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     People = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DaXacNhan = table.Column<bool>(type: "bit", nullable: false),
                     DaTuChoi = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -206,6 +206,11 @@ namespace Admin.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "1", null, "Admin", "ADMIN" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

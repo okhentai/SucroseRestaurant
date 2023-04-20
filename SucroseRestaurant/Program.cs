@@ -3,7 +3,9 @@ using Admin.Models.Bookings;
 using Admin.Models.Categories;
 using Admin.Models.Foods;
 using Admin.Models.Users;
+using Admin.Service;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,12 +18,18 @@ builder.Services.AddDbContext<AppDbContext>(optionsAction =>
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 
+
 builder.Services.AddScoped<IBookingRep, BookingRep>();
 // Using Identity
-builder.Services.AddIdentity<User, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedEmail = true;
+})
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 
-
+//Using sendgrid
+builder.Services.AddTransient<EmailSender>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

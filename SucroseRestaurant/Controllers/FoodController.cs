@@ -25,10 +25,10 @@ namespace Admin.Controllers
             return View(foodRepository.GetAll());
         }
 
-        public IActionResult Menu(int categoryId)
+        public IActionResult Menu(int categoryId = 0)
         {
-            var food = foodRepository.GetFoodByCategory(categoryId);
             var category = categoryRepository.GetCategories();
+            var food = foodRepository.GetFoodByCategory(categoryId);
             FoodCategoryViewModel model = new FoodCategoryViewModel
             {
                 Foods = food,

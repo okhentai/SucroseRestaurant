@@ -23,5 +23,6 @@ namespace Admin.Models.ViewModel
         [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "Password and confirmation password do not macth")]
         public string ConfirmPassword { get; set; }
+        public bool IsEmailConfirmed { get; set; }
     }
 }

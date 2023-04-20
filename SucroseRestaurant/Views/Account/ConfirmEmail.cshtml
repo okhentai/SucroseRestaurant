@@ -1,0 +1,19 @@
+﻿@model Admin.Models.ViewModel.RegisterViewModel
+@{
+    ViewData["Title"] = "Confirm Email";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.IsEmailConfirmed)
+{
+    <div class="alert alert-success" role="alert">
+        Your email has been confirmed.
+    </div>
+}
+else
+{
+    <div class="alert alert-danger" role="alert">
+        Error confirming your email.
+    </div>
+}

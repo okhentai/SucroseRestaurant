@@ -46,9 +46,18 @@ namespace Admin.Models.Foods
             return appDbContext.Foods.Find(id);
         }
 
-        public IEnumerable<Food> GetFoodByCategory(int categoryId)
+        public IEnumerable<Food> GetFoodByCategory(int categoryId = 0)
         {
-            return appDbContext.Foods.Where(f => f.CategoryId == categoryId).ToList();
+           if (categoryId == 0)
+            {
+                appDbContext.SaveChanges();
+                return appDbContext.Foods;
+            }
+            else
+            {
+                appDbContext.SaveChanges();
+                return appDbContext.Foods.Where(f => f.CategoryId == categoryId);
+            }
         }
 
         public Food UpdateFood(Food food)

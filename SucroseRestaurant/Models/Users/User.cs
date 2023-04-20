@@ -7,7 +7,7 @@ namespace Admin.Models.Users
     {
         public string FullName { get; set; }
         public string PhoneNumber { get; set; }
-        
+
 
     }
 }

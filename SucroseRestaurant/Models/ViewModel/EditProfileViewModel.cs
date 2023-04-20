@@ -11,8 +11,5 @@ namespace Admin.Models.ViewModel
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
     }
 }

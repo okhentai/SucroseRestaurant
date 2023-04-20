@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System.Data;
 
 namespace Admin.Data
 {
@@ -25,8 +26,15 @@ namespace Admin.Data
             //Make add Migration work
             modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(x => new { x.UserId });
             modelBuilder.Entity<IdentityUserRole<string>>().HasKey(x => new { x.RoleId, x.UserId });
+            modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole { Id = "1", 
+                Name = Role.Admin.ToString(), 
+                NormalizedName = Role.Admin.ToString().ToUpper()});
             modelBuilder.Entity<IdentityUserToken<string>>().HasKey(x => new { x.UserId, x.Value });
-
+            
+        }
+        public enum Role
+        {
+            Admin
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Food> Foods { get; set; }
