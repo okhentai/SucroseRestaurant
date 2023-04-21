@@ -8,9 +8,9 @@ namespace Admin.Service
     {
         public async Task SendEmailAsync(string email, string subject, string message)
         {
-            var apiKey = "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";
+            var apiKey = "YOUR_API_SENDGRID_KEY";
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("ankhang897979@gmail.com", "SucRose");
+            var from = new EmailAddress("YOUR_EMAIL_SENDER", "YOUR_NAME");
             var to = new EmailAddress(email);
             var msg = MailHelper.CreateSingleEmail(from, to, subject, message, message);
             await client.SendEmailAsync(msg);

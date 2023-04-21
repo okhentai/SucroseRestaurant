@@ -238,7 +238,7 @@ namespace Admin.Controllers
 
                 // Send email notification
                 var subject = "Reset your password";
-                var htmlMessage = $@"<p>Hello {user.UserName},</p><p>Please reset your password by clicking the link below:</p><p><a href='{callbackUrl}'>Reset Password</a></p>";
+                var htmlMessage = $@"<p>Hello {user.UserName},</p><p>Hãy bấm vào đây để lấy lại mật khẩu của bạn:</p><p><a href='{callbackUrl}'>Reset Password</a></p>";
                 await _emailSender.SendEmailAsync(user.Email, subject, htmlMessage);
 
                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
